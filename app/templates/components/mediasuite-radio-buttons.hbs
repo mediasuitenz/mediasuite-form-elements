@@ -1,0 +1,41 @@
+{{#if groupLabel}}
+<h3 class="element-group-label">
+  {{groupLabel}}
+  {{#if required}}
+    <span class="text-red">*</span>
+  {{/if}}
+</h3>
+{{else}}
+  {{#if inlineGroupLabel}}
+    <span class="inline-group-label">
+      {{inlineGroupLabel}}
+      {{#if required}}
+        <span class="text-red">*</span>
+      {{/if}}
+    </span>
+  {{/if}}
+{{/if}}
+
+{{#each options as |option|}}
+  {{#if useButtonStyle}}
+    {{mediasuite-radio-button
+      name=option.name
+      value=option.value
+      label=option.label
+      checked=option.checked
+      disabled=option.disabled
+      class='button-style-radio'
+      onChange=(action 'onChange')
+    }}
+  {{else}}
+    {{mediasuite-radio-button
+      name=option.name
+      value=option.value
+      label=option.label
+      checked=option.checked
+      disabled=option.disabled
+      onChange=(action 'onChange')
+    }}
+  {{/if}}
+{{/each}}
+{{error-messages/inline errors=errors}}

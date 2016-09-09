@@ -1,0 +1,18 @@
+{{#if label}}
+  <label for={{inputID}}>{{label}} {{#if required}}<span class="text-red">*</span>{{/if}}</label>
+{{/if}}
+{{one-way-number
+  value=value
+  id=inputID
+  update='update'
+  required=required
+  class=class
+  disabled=disabled
+  focus-out=onFocusOut
+  step=0.01
+  min=0
+  sanitizeInput=(action 'toFixed')
+}}
+{{#each errors as |error|}}
+  <span class="error">{{error.message}}</span>
+{{/each}}

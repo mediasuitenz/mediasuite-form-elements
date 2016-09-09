@@ -1,0 +1,8 @@
+<label class="group-label" {{action 'updateGroup' on='change'}}>
+  {{group.name}}
+  {{input type="checkbox" checked=group.checked disabled=group.disabled}}
+  {{#if additionalLabelText}}
+    <span class="additional-label-text">{{additionalLabelText}}</span>
+  {{/if}}
+</label>
+{{shared/form/check-boxes options=group.options update=(action 'updateOptions') useButtonStyle=useButtonStyleCheckboxes}}

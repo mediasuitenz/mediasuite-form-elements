@@ -1,0 +1,8 @@
+<label for={{inputID}}>{{label}} {{#if required}}<span class="text-red">*</span>{{/if}}</label>
+{{one-way-textarea
+  value=value
+  update=update
+}}
+{{#each errors as |error|}}
+  <span class="error">{{error.message}}</span>
+{{/each}}

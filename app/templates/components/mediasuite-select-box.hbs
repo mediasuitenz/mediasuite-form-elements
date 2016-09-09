@@ -1,0 +1,16 @@
+<label for={{inputID}}>{{label}} {{#if required}}<span class="text-red">*</span>{{/if}}</label>
+{{#x-select value=value id=inputID action=didChange disabled=disabled}}
+  {{#if placeholderOption}}
+    <option>Please Select...</option>
+  {{/if}}
+  {{#each options as |option|}}
+    {{#x-option value=option}}
+      {{#if option.name}}
+        {{option.name}}
+      {{else}}
+        {{option}}
+      {{/if}}
+    {{/x-option}}
+  {{/each}}
+{{/x-select}}
+{{error-messages/inline errors=errors}}

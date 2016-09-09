@@ -1,0 +1,16 @@
+{{#if label}}
+  <label for={{inputID}}>{{label}} {{#if required}}<span class="text-red">*</span>{{/if}}</label>
+{{/if}}
+{{one-way-input
+  type=type
+  value=value
+  placeholder=placeholder
+  required=required
+  id=inputID
+  class=class
+  disabled=disabled
+  update=update
+}}
+{{#each errors as |error|}}
+  <span class="error">{{error.message}}</span>
+{{/each}}

@@ -1,0 +1,21 @@
+<input class="file-picker" type="file" onchange={{action "didSelectFiles"}} accept={{acceptFilter}} multiple="">
+{{#if selectedFiles.length}}
+  <ul class="file-list">
+  {{#each selectedFiles as |file index|}}
+    {{shared/form/file-upload/item
+      file=file
+      removeFile=removeFile
+      index=index
+      maxFileSize=maxFileSize
+    }}
+  {{/each}}
+  </ul>
+{{/if}}
+{{#if oversizeFiles.length}}
+  <div class="oversized-files text-red bold">
+    The following files exceed the maximum allowed upload size:
+    {{#each oversizeFiles as |oversized index|}}
+      {{#if (gte index 1)}}, {{/if}}{{oversized.name}}
+    {{/each}}
+  </div>
+{{/if}}

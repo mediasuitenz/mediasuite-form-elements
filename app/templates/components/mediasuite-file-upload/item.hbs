@@ -1,0 +1,9 @@
+<span class="file-name">
+  {{#if isImage}}
+    <i class="icon-picture text-14"></i>
+  {{else}}
+    <i class="icon-doc-text text-14"></i>
+  {{/if}}
+  {{file.name}}
+</span>
+<a class="file-icon delete-file" {{action removeFile file}} href="#"><i class="icon icon-cross"></i></a>
