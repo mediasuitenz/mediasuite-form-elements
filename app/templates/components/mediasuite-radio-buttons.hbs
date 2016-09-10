@@ -19,22 +19,22 @@
 {{#each options as |option|}}
   {{#if useButtonStyle}}
     {{mediasuite-radio-button
-      name=option.name
-      value=option.value
+      name=radioButtonsName
+      value=value
+      option=option
       label=option.label
-      checked=option.checked
       disabled=option.disabled
       class='button-style-radio'
-      onChange=(action 'onChange')
+      update=update
     }}
   {{else}}
     {{mediasuite-radio-button
-      name=option.name
-      value=option.value
+      name=radioButtonsName
+      value=value
+      option=option
       label=option.label
-      checked=option.checked
       disabled=option.disabled
-      onChange=(action 'onChange')
+      update=update
     }}
   {{/if}}
 {{/each}}
