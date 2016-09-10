@@ -1,26 +1,15 @@
 # Mediasuite-formelements
 This add-on wraps the excellent Dockyard One Way Controls (https://github.com/DockYard/ember-one-way-controls) in standard
-Media Suite mark-up to handle labels and errors returned from the server
+Media Suite mark-up to handle labels and errors returned from the server.
+
+**Disclaimer** This is a super-alpha library at this stage. Use is not recommended.
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+* This library is not yet ready for installation.
 
-## Running
-
-* `ember serve`
-* Visit your app at http://localhost:4200.
 
 ## Running Tests
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+* Tests have not yet been authored
 
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
