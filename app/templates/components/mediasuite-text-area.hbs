@@ -1,7 +1,8 @@
-<label for={{inputID}}>{{label}} {{#if required}}<span class="text-red">*</span>{{/if}}</label>
+<label for={{inputId}}>{{label}} {{#if required}}<span class="text-red">*</span>{{/if}}</label>
 {{one-way-textarea
   value=value
   update=update
+  id=inputId
 }}
 {{#each errors as |error|}}
   <span class="error">{{error.message}}</span>

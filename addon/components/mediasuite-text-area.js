@@ -3,7 +3,7 @@ const { computed } = Ember
 
 export default Ember.Component.extend({
   classNames: ['element-wrap'],
-  inputID: computed('elementId', function () {
-    return `input-${this.get('elementId')}`
+  inputId: computed('elementId', function () {
+    return `textarea-${this.get('elementId')}`
   })
 })
