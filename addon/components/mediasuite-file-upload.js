@@ -1,7 +1,7 @@
 import Ember from 'ember'
-import { MAX_FILE_SIZE } from 'tmp-for-all/constants'
+import { MAX_FILE_SIZE } from 'tmp-for-all/constants'  // TODO: remove this
 
-const { get, $ } = Ember
+const { get } = Ember
 
 export default Ember.Component.extend({
   tagName: 'span',
@@ -14,7 +14,7 @@ export default Ember.Component.extend({
       for (let i = 0; i < files.length; i++) {
         selection.pushObject(files[i])
       }
-      $('input').val('')
+      this.$('input').val('')
       get(this, 'addFiles')(selection)
     }
   }
