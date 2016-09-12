@@ -1,18 +1,15 @@
 import Ember from 'ember'
-const { computed, set, get } = Ember
+const { computed, get } = Ember
 
 export default Ember.Component.extend({
   classNames: ['element-wrap', 'radio-button'],
   classNameBindings: ['isChecked:is-checked'],
   inputID: computed('elementId', function () {
-    return `input-${this.get('elementId')}`
+    return `input-${get(this, 'elementId')}`
   }),
   disabled: false,
   isDisabled: computed('disabled', function () {
-    return this.get('disabled') ? 'disabled' : ''
-  }),
-  isChecked: computed('value', 'option', function () {
-    return get(this, 'value') === get(this, 'option')
+    return get(this, 'disabled') ? 'disabled' : ''
   }),
   value: ''
 })

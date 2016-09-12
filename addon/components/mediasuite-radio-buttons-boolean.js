@@ -1,5 +1,5 @@
 import Ember from 'ember'
-const { computed, get, set } = Ember
+const { computed, get } = Ember
 
 export default Ember.Component.extend({
   name: '',
@@ -12,12 +12,12 @@ export default Ember.Component.extend({
       {
         value: true,
         label: 'Yes',
-        disabled: this.get('disabled')
+        disabled: get(this, 'disabled')
       },
       {
         value: false,
         label: 'No',
-        disabled: this.get('disabled')
+        disabled: get(this, 'disabled')
       }
     ]
   }),
