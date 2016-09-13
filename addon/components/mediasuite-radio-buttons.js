@@ -1,16 +1,10 @@
 import Ember from 'ember'
-const { get, set } = Ember
+const { get, set, computed } = Ember
 
 export default Ember.Component.extend({
   classNames: ['element-group-wrap'],
   classNameBindings: ['useButtonStyle:button-style-radios'],
-  actions: {
-    //todo: wtf is going on here!!!
-    onChange (selectedValue) {
-      get(this, 'onChange')(selectedValue)
-      get(this, 'options').forEach(function (option) {
-        set(option, 'checked', option.value === selectedValue)
-      })
-    }
-  }
+  radioButtonsName: computed('name', function () {
+    return get(this, 'name') || get(this, 'elementId')
+  })
 })

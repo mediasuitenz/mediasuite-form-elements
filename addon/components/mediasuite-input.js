@@ -6,10 +6,5 @@ export default Ember.Component.extend({
   type: 'text',
   inputID: computed('elementId', function () {
     return `input-${this.get('elementId')}`
-  }),
-  actions: {
-    localupdate () {
-      debugger
-    }
-  }
+  })
 })
