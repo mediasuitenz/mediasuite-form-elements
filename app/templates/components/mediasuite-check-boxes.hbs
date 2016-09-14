@@ -6,12 +6,12 @@
   {{/if}}
 </h3>
 {{/if}}
-{{#each checkboxes as |option|}}
-  {{shared/form/check-box
+{{#each clonedOptions as |option|}}
+  {{mediasuite-check-box
     checked=option.checked
     disabled=option.disabled
     label=option.label
-    update=(action 'update')
+    update=(action 'onUpdate' option)
     useButtonStyle=useButtonStyle
   }}
 {{/each}}
