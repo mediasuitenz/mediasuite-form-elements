@@ -1,0 +1,45 @@
+<h1>Checkboxes</h1>
+<br><br>
+<p>
+  Wraps the Ember <a href="https://github.com/DockYard/ember-one-way-controls/blob/master/docs/one-way-checkbox.md">One-Way-Checkbox</a> component.<br>
+  This implementation allows an option to be passed in and rendered.  Some work required on the layout styles however.
+</p>
+<p>
+  <table>
+    <tr>
+      <th>Paramater</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+    <tr><td>label</td><td>string</td><td>Label</td></tr>
+    <tr><td>options</td> <td>[object]</td><td>Array of objects, with each object describing the checkbox.  <br>
+    Can contain the following keys: <b>label (required)</b>, <b>checked</b>, <b>disabled</b> </td></tr>
+    <tr><td>update</td> <td>function (boolean)</td><td>On update, returns the current isChecked status</td></tr>
+    <tr><td>errors</td> <td>[object]</td><td>Array of error objects.  Each object must contain a 'message' key to be displayed.  Note, this is a bit weird on a collection
+      of checkboxes, as you may not want the errors represented for each one, but for the whole set.  In which case you'll need to use something like:
+      <pre>
+        &#123;&#123;#each errors as |error|&#125;&#125;
+          &lt;span class="error"&gt;&#123;&#123;error.message&#125;&#125;&lt;/span&gt;
+        &#123;&#123;/each&#125;&#125;
+      </pre>
+    </td></tr>
+  </table>
+</p>
+<h3>Basic use</h3>
+{{mediasuite-check-boxes
+  options=model.options
+  groupLabel="Pick your team!"
+  update=(action (mut model.options))
+}}
+<p>Checked:
+  {{#each model.options as |gunter|}}
+    {{gunter.label}} - {{gunter.checked}}<br>
+  {{/each}}
+</p>
+<pre>
+&#123;&#123;mediasuite-check-boxes
+  options=model.options
+  groupLabel="Pick your team!"
+  update=(action (mut model.options))
+&#125;&#125;
+</pre>

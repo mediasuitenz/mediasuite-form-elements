@@ -1,0 +1,150 @@
+/*doc
+---
+title: Icons
+name: icons
+category: Icons
+---
+
+```html_example
+<div style="font-size: 30px;">
+  <i class="icon-location"></i>
+  <i class="icon-layout"></i>
+  <i class="icon-hazard"></i>
+  <i class="icon-tick"></i>
+  <i class="icon-map-hex"></i>
+  <i class="icon-cone"></i>
+  <i class="icon-calendar"></i>
+  <i class="icon-left"></i>
+  <i class="icon-right"></i>
+  <i class="icon-up"></i>
+  <i class="icon-down"></i>
+  <i class="icon-plus"></i>
+  <i class="icon-minus"></i>
+  <i class="icon-hellip"></i>
+  <i class="icon-user"></i>
+  <i class="icon-users"></i>
+  <i class="icon-cross"></i>
+  <i class="icon-logout"></i>
+  <i class="icon-bell"></i>
+  <i class="icon-arrow-right"></i>
+  <i class="icon-up-big"></i>
+  <i class="icon-down-big"></i>
+  <i class="icon-speech-bubble"></i>
+  <i class="icon-doc-text"></i>
+  <i class="icon-super-admin"></i>
+  <i class="icon-spinner"></i>
+</div>
+```
+
+*/
+
+@font-face {
+  font-family: 'fontello';
+  src: url('fonts/fontello.eot?r=2');
+  src: url('fonts/fontello.eot?r=2#iefix') format('embedded-opentype'),
+       url('fonts/fontello.woff?r=2') format('woff'),
+       url('fonts/fontello.ttf?r=2') format('truetype'),
+       url('fonts/fontello.svg?r=2#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: .9;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bell:before { content: '\e800'; } /* '' */
+.icon-menu:before { content: '\e801'; } /* '' */
+.icon-plus:before { content: '\e802'; } /* '' */
+.icon-minus:before { content: '\e803'; } /* '' */
+.icon-down:before { content: '\e804'; } /* '' */
+.icon-left:before { content: '\e805'; } /* '' */
+.icon-right:before { content: '\e806'; } /* '' */
+.icon-up:before { content: '\e807'; } /* '' */
+.icon-hellip:before { content: '\e808'; } /* '' */
+.icon-user:before { content: '\e809'; } /* '' */
+.icon-arrow-right:before { content: '\e80a'; } /* '' */
+.icon-picture:before { content: '\e80b'; } /* '' */
+.icon-logout:before { content: '\e80c'; } /* '' */
+.icon-up-big:before { content: '\e80d'; } /* '' */
+.icon-down-big:before { content: '\e80e'; } /* '' */
+.icon-info:before { content: '\e810'; } /* '' */
+.icon-cone:before { content: '\e811'; } /* '' */
+.icon-location:before { content: '\e812'; } /* '' */
+.icon-layout:before { content: '\e813'; } /* '' */
+.icon-hazard:before { content: '\e814'; } /* '' */
+.icon-users:before { content: '\e815'; } /* '' */
+.icon-speech-bubble:before { content: '\e816'; } /* '' */
+.icon-spinner:before { content: '\e817'; } /* '' */
+.icon-calendar:before { content: '\e818'; } /* '' */
+.icon-super-admin:before { content: '\e819'; } /* '' */
+.icon-doc-text:before { content: '\e81a'; } /* '' */
+.icon-download:before { content: '\e81b'; } /* '' */
+.icon-tick:before { content: '\e81c'; } /* '' */
+.icon-cross:before { content: '\e81e'; } /* '' */
+
+.icon-spinner:before {
+  -webkit-animation: spin 1.5s linear infinite;
+  -moz-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+/*doc
+---
+title: Icon Circles
+name: icon-circles
+category: Icons
+---
+
+```html_example
+<div class="icon-circle bg-teal text-white"><i class="icon-user"></i></div>
+<div class="icon-circle bg-orange text-white"><i class="icon-location"></i></div>
+<div class="icon-circle bg-green text-white"><i class="icon-calendar"></i></div>
+<div class="icon-circle bg-blue text-white"><i class="icon-layout"></i></div><br/><br/>
+<div class="icon-circle small-icon bg-teal text-white"><i class="icon-user"></i></div>
+<div class="icon-circle small-icon bg-orange text-white"><i class="icon-location"></i></div>
+<div class="icon-circle small-icon bg-green text-white"><i class="icon-calendar"></i></div>
+<div class="icon-circle small-icon bg-blue text-white"><i class="icon-layout"></i></div><br/><br/>
+<h1><div class="icon-circle on-the-left bg-blue text-white"><i class="icon-layout"></i></div> Text to the right</h1><br/>
+<h1>Text to the left <div class="icon-circle on-the-right bg-blue text-white"><i class="icon-layout"></i></div></h1>
+```
+*/
+
+.icon-circle {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 100%;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  font-size: 1.8rem;
+  line-height: 24px;
+}
+
+.small-icon {
+  font-size: 1.2rem;
+}
+
+.on-the-left {
+  margin-right: 5px;
+}
+
+.on-the-right {
+  margin-left: 5px;
+}

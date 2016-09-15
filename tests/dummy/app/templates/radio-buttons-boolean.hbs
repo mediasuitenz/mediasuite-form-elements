@@ -1,0 +1,62 @@
+<h1>Boolean Radio Buttons</h1>
+<br><br>
+<p>A set of radio buttons when you want a boolean true/false response.  A convenience method for {{#link-to 'radio-button'}}mediasuite-radio-button{{/link-to}}.</p>
+<p>
+  <table>
+    <tr>
+      <th>Paramater</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+    <tr><td>groupLabel</td><td>string</td><td>Label</td></tr>
+    <tr><td>value</td> <td>boolean</td><td>Either true, false or null.  Passing in null will result in neither of the radio-buttons being selected</td></tr>
+    <tr><td>name</td> <td>string</td><td>By default the html attribute 'name' will be the same as the Ember supplied Id.  This allows you to set your own.</td></tr>
+    <tr><td>errors</td> <td>[object]</td><td>Array of error objects.  Each object must contain a 'message' key to be displayed</td></tr>
+    <tr><td>update</td> <td>function (value(object))</td><td>Function called when a radio-button is selected. </td></tr>
+    <tr><td>required</td> <td>boolean (default false)</td><td>Is the element required</td></tr>
+  </table>
+</p>
+
+<h3>Standard example</h3>
+
+{{mediasuite-radio-buttons-boolean
+  name="setone"
+  value=model.hasTaste
+  update=(route-action 'didEnjoy')
+  groupLabel='Did you enjoy Ready Player One?'
+  required=true
+  errors=layout.errors.hasTaste
+}}
+
+<pre>
+&#123;&#123;mediasuite-radio-buttons-boolean
+  name="setone"
+  value=model.hasTaste
+  update=(route-action 'didEnjoy')
+  groupLabel='Did you enjoy Ready Player One?'
+  required=true
+  errors=layout.errors.hasTaste
+&#125;&#125;
+</pre>
+
+<br><br>
+
+<h3>Example, with error message and no default selection</h3>
+
+{{mediasuite-radio-buttons-boolean
+  value=model.confirm
+  update=(action (mut model.confirm))
+  groupLabel='Did you really enjoy Ready Player One?'
+  required=true
+  errors=model.errors.confirm
+}}
+
+<pre>
+&#123;&#123;mediasuite-radio-buttons-boolean
+  value=model.confirm
+  update=(action (mut model.confirm))
+  groupLabel='Did you really enjoy Ready Player One?'
+  required=true
+  errors=model.errors.confirm
+&#125;&#125;
+</pre>

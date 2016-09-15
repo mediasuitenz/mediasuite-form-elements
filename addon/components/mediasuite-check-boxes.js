@@ -12,7 +12,7 @@ export default Ember.Component.extend({
   actions: {
     onUpdate (option, isChecked) {
       set(option, 'checked', isChecked)
-      get(this, 'update')(get(this, 'clonedOptions'))
+      get(this, 'update')(get(this, 'clonedOptions'), option, isChecked)
     }
   }
 })

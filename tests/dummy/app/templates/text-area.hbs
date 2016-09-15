@@ -1,0 +1,64 @@
+<h1>Text Area</h1>
+<br><br>
+<p>Wraps the <a href="https://github.com/DockYard/ember-one-way-controls/blob/master/docs/one-way-textarea.md">ember-one-way-textarea</a></p>
+<p>
+  <table>
+    <tr>
+      <th>Paramater</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+    <tr><td>value</td><td>string</td><td>The value of the input (even 'number' type returns a string)</td></tr>
+    <tr><td>label</td><td>string</td><td>Label</td></tr>
+    <tr><td>type</td> <td>string ('text' default)</td><td>The type of the input (html5 values apply)</td></tr>
+    <tr><td>required</td> <td>true, false(default)</td><td>Indicates whether this is a required field - adds an '*' to the UI and marks the input element as 'required'</td></tr>
+    <tr><td>disabled</td> <td>true, false(default)</td><td>Indicates whether the field is disabled</td></tr>
+    <tr><td>placeholder</td> <td>string</td><td>Element placeholder text</td></tr>
+    <tr><td>elementId</td> <td>string</td><td>Textarea will be 'textarea-[elementId]'</td></tr>
+    <tr><td>errors</td> <td>[object]</td><td>Array of error objects.  Each object must contain a 'message' key to be displayed</td></tr>
+  </table>
+</p>
+
+<h3>Required field, no errors</h3>
+{{mediasuite-text-area
+  value=model.physicalAddress
+  label="Physical Address:"
+  required=true
+  disabled=false
+  placeholder='some placeholder text'
+  elementId='unique-id'
+  update=(action (mut model.physicalAddress))
+}}
+<pre>
+&#123;&#123;mediasuite-text-area
+  value=model.physicalAddress
+  label="Physical Address:"
+  required=true
+  disabled=false
+  placeholder='some placeholder text'
+  elementId='unique-id'
+&#125;&#125;
+</pre>
+
+<br><br>
+
+<h3>With Errors</h3>
+{{mediasuite-text-area
+  value=model.physicalAddress
+  label="Physical Address:"
+  errors=model.errors.physicalAddress
+  required=true
+  disabled=false
+  placeholder='some placeholder text'
+}}
+
+<pre>
+&#123;&#123;mediasuite-text-area
+  value=model.physicalAddress
+  label="Physical Address:"
+  errors=model.errors.physicalAddress
+  required=true
+  disabled=false
+  placeholder='some placeholder text'
+&#125;&#125;
+</pre>

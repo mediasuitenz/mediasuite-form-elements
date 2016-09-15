@@ -1,0 +1,2876 @@
+/*doc
+---
+title: Buttons
+name: buttons
+category: Components
+---
+
+```html_example
+<div class="margin-btm-20">
+  <h3 class="margin-btm-10">Colour buttons</h3>
+  <a href="#" class="colour-btn-blue">Button</a>
+  <a href="#" class="colour-btn-orange">Button</a>
+  <a href="#" class="colour-btn-green">Button</a>
+  <a href="#" class="colour-btn-red">Button</a>
+  <a href="#" class="colour-btn-white">Button</a>
+</div>
+<div class="margin-btm-20">
+  <h3 class="margin-btm-10">Small buttons</h3>
+  <a href="#" class="colour-btn-blue small-btn">Button</a>
+  <a href="#" class="colour-btn-orange small-btn">Button</a>
+  <a href="#" class="colour-btn-green small-btn">Button</a>
+  <a href="#" class="colour-btn-red small-btn">Button</a>
+  <a href="#" class="colour-btn-white small-btn">Button</a>
+</div>
+<div class="margin-btm-20">
+  <h3 class="margin-btm-10">Disabled buttons</h3>
+  <a href="#" class="colour-btn-disabled">Button</a>
+  <button class="disabled">Button</button>
+</div>
+<div class="margin-btm-20">
+  <h3 class="margin-btm-10">Buttons with icons</h3>
+  <button class="colour-btn-orange btn-icon-right">Button <i class="icon-right"></i></button>
+  <button class="colour-btn-orange btn-icon-left"><i class="icon-left"></i> Button</button>
+</div>
+<div class="margin-btm-20">
+  <h3 class="margin-btm-10">Link style buttons</h3>
+  <button class="link-style">Button</button>
+  <button class="link-style text-blue">Button</button>
+</div>
+```
+
+*/
+
+[class*='colour-btn-'],
+button,
+input[type='submit'],
+.button {
+  display: inline-block;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+  padding: 11px 20px;
+  border-radius: 3px;
+  border: none;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  cursor: pointer;
+  @extend .primary-font-bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.2rem;
+  line-height: 1;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  transition: all 300ms ease;
+}
+
+[class*='colour-btn-']:hover,
+input[type='submit']:hover,
+button:hover,
+.button:hover {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+}
+
+[class*='colour-btn-']:active,
+input[type='submit']:active,
+button:active,
+.button:active {
+  box-shadow: none;
+}
+
+button.link-style,
+button.link-style:focus,
+.link-style,
+.link-style:focus {
+  @extend .primary-font;
+  padding: 11px 20px;
+  font-size: 1.4rem;
+  color: $orange;
+  box-shadow: none;
+  background: none;
+  border: none;
+  font-weight: 400;
+  text-transform: none;
+  text-decoration: underline;
+  text-shadow: none;
+  outline: none;
+  transition: color 250ms ease;
+  cursor: pointer;
+}
+
+button.link-style:hover,
+.link-style:hover {
+  background: none;
+}
+
+.link-style:hover {
+  color: darken($orange, 5%);
+}
+
+.colour-btn-blue {
+  background-color: $blue;
+  color: #fff;
+  border-color: $blue-dark;
+}
+
+.colour-btn-blue:hover {
+  background-color: $blue-light;
+}
+
+.colour-btn-blue:active {
+  background-color: $blue-dark;
+  border-color: $blue-light;
+}
+
+.colour-btn-orange {
+  background-color: $orange;
+  color: #fff;
+  border-color: $orange-dark;
+}
+
+.colour-btn-orange:hover {
+  background-color: $orange-light;
+}
+
+.colour-btn-orange:active {
+  background-color: $orange-dark;
+  border-color: $orange-light;
+}
+
+.colour-btn-green {
+  background-color: $green;
+  color: #fff;
+  border-color: $green-dark;
+}
+
+.colour-btn-green:hover {
+  background-color: $green-light;
+}
+
+.colour-btn-green:active {
+  background-color: $green-dark;
+  border-color: $green-light;
+}
+
+.colour-btn-red {
+  background-color: $red;
+  color: #fff;
+  border-color: $red-dark;
+}
+
+.colour-btn-red:hover {
+  background-color: $red-light;
+}
+
+.colour-btn-red:active {
+  background-color: $red-dark;
+  border-color: $red-light;
+}
+
+.colour-btn-white {
+  background-color: #fff;
+  color: $blue-dark;
+  border-bottom: none;
+  text-shadow: none;
+}
+
+.colour-btn-white:hover {
+  background-color: #fff;
+  text-shadow: none;
+}
+
+.colour-btn-white:active {
+  background-color: #fff;
+  border-color: $grey-dark;
+}
+
+.colour-btn-transparent {
+  background-color: rgba(255,255,255,0.3);
+  border-color: rgba(0,0,0,.2);
+  color: #fff;
+}
+
+.colour-btn-transparent:hover {
+  background-color: rgba(255,255,255,0.4);
+  border-color: rgba(0,0,0,.3);
+}
+
+.colour-btn-transparent:active {
+  background-color: rgba(255,255,255,0.1);
+  border-color: rgba(0,0,0,.05);
+}
+
+button.disabled,
+button.disabled:hover,
+button.disabled:active,
+button:disabled,
+button:disabled:hover,
+button:disabled:active,
+.colour-btn-disabled,
+.colour-btn-disabled:hover,
+.colour-btn-disabled:active {
+  background-color: $grey;
+  color: #fff;
+  border-color: $grey;
+  box-shadow: none;
+  pointer-events: none;
+  text-shadow: none;
+
+  &.enable-clicks {
+    pointer-events: auto;
+  }
+}
+
+.small-btn {
+  padding: 9px 13px;
+  font-size: 1.1rem;
+}
+
+.match-form-element {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 23px;
+}
+
+.unstyle-btn,
+.unstyle-btn:hover,
+.unstyle-btn:active {
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
+  text-transform: none;
+  text-decoration: underline;
+  transition: none;
+  outline: none !important;
+}
+
+.faux-link,
+.faux-link:hover,
+.faux-link:active,
+.faux-link:focus {
+  @extend .primary-font;
+  text-decoration: underline;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: none;
+  text-transform: none;
+  border-radius: 0;
+  text-shadow: none;
+  box-shadow: none;
+  outline: none;
+}
+
+.btn-icon-left {
+  position: relative;
+  line-height: 1;
+  padding: 10px 15px 10px 35px;
+
+  i {
+    left: 10px;
+  }
+}
+
+.btn-icon-right {
+  position: relative;
+  line-height: 1;
+  padding: 10px 35px 10px 15px;
+
+  i {
+    right: 10px;
+  }
+}
+
+.btn-icon-left,
+.btn-icon-right {
+
+  i {
+    position: absolute;
+    font-size: 1.9rem;
+    top: 6px;
+  }
+
+}
+
+.btn-list [class*='colour-btn-'],
+.heading-block .btn-list [class*='colour-btn-'] {
+  float: none;
+  margin-left: 5px;
+}
+
+@media screen and (max-width: 767px) {
+
+  .match-form-element {
+    margin-top: 0;
+  }
+
+  .heading-block .btn-list {
+    float: none;
+    width: 100%;
+    text-align: left;
+  }
+
+  .btn-list [class*='colour-btn-'],
+  .heading-block .btn-list [class*='colour-btn-'] {
+    padding: 7px 10px;
+    font-size: 1rem;
+    margin: 0 5px 0 0;
+  }
+
+}
+
+/*doc
+---
+title: Heading Blocks
+name: heading-blocks
+category: Components
+---
+
+## Dotted underline heading block
+```html_example
+<div class="heading-block underline-dotted">
+  <h1 class="float-left">TMP 11 (1.1) Accepted</h1>
+  <a href="#" class="colour-btn-green float-right">Create Revision</a>
+</div>
+```
+
+## Coloured underline heading block
+```html_example
+<div class="heading-block underline-coloured-green">
+  <h2>Project Information</h2>
+  <i class="icon-location"></i>
+</div>
+
+<div class="heading-block underline-coloured-blue">
+  <h2>Worksite Information</h2>
+  <i class="icon-cone"></i>
+</div>
+
+<div class="heading-block underline-coloured-orange">
+  <h2>Layouts</h2>
+  <i class="icon-layout"></i>
+</div>
+
+<div class="heading-block underline-coloured-red">
+  <h2>Work Schedule</h2>
+  <i class="icon-calendar"></i>
+</div>
+```
+
+## Coloured underline heading block with toggle button
+```html_example
+<div class="heading-block underline-coloured-green has-tab-btn">
+  <h2>Project Information</h2>
+  <i class="icon-location"></i>
+  <a href="#" class="tab-btn"><i class="icon-down"></i></a>
+</div>
+
+<div class="heading-block underline-coloured-blue has-tab-btn">
+  <h2>Worksite Information</h2>
+  <i class="icon-cone"></i>
+  <a href="#" class="tab-btn"><i class="icon-down"></i></a>
+</div>
+
+<div class="heading-block underline-coloured-orange has-tab-btn">
+  <h2>Layouts</h2>
+  <i class="icon-layout"></i>
+  <a href="#" class="tab-btn"><i class="icon-down"></i></a>
+</div>
+
+<div class="heading-block underline-coloured-red has-tab-btn">
+  <h2>Project Schedule</h2>
+  <i class="icon-calendar"></i>
+  <a href="#" class="tab-btn"><i class="icon-down"></i></a>
+</div>
+```
+*/
+
+.heading-block {
+  @extend .clearfix;
+
+  // Float headings left and buttons right by default:
+  h1, h2, h3, h4, h5, h6 {
+    float: left;
+    margin: 0 10px 0 0;
+  }
+
+  [class*='btn-'],
+  i {
+    float: right;
+  }
+
+  i {
+    font-size: 1.6rem;
+    line-height: 20px;
+  }
+
+  // Allow for default float set up to be overridden:
+  .float-left {
+    float: left;
+  }
+
+  .float-right {
+    float: right;
+  }
+
+  &.has-tab-btn {
+    position: relative;
+    padding-right: 40px;
+  }
+
+  &.has-tab-text-btn {
+    position: relative;
+    padding-right: 55px;
+  }
+
+  .tab-btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  &.has-cross {
+    padding-bottom: 10px;
+  }
+
+  .icon-cross {
+    cursor: pointer;
+    margin-top: 0;
+  }
+
+  &.has-text-link {
+    padding-bottom: 10px;
+
+    .text-link {
+      float: right;
+      line-height: 21px;
+    }
+  }
+}
+
+.additional-heading-text {
+  @extend .primary-font;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.sub-heading {
+  @extend .primary-font;
+  font-size: 1.6rem;
+  float: none;
+  clear: both;
+
+  a,
+  a:hover {
+    color: $green;
+    text-decoration: underline;
+  }
+}
+
+.underline-dotted {
+  padding-bottom: 16px;
+  margin-bottom: 30px;
+  background: url('/assets/images/dot.png') repeat-x 0 bottom;
+
+   > {
+     h1, h2, h3, h4, h5, h6 {
+      line-height: 36px;
+    }
+  }
+}
+
+[class*='underline-coloured-'] {
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+
+  &.heading-block {
+
+    h1, h2, h3, h4, h5, h6 {
+      line-height: 28px;
+    }
+
+    i {
+      font-size: 2.5rem;
+      line-height: 1;
+      margin-top: 5px;
+    }
+
+  }
+
+}
+
+.big-heading {
+  padding-bottom: 20px;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  i {
+    font-size: 1.8rem;
+    line-height: 25px;
+    color: #000 !important;
+  }
+
+}
+
+.tab-btn {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px 4px 0 0 !important;
+  text-align: center;
+  font-size: 24px;
+  line-height: 30px;
+  color: #fff;
+
+  i {
+    color: #fff !important;
+    float: none;
+  }
+
+  i:before {
+    margin: 0;
+  }
+}
+
+.tab-btn-text {
+  @extend .primary-font-bold;
+  text-decoration: none;
+  width: auto;
+  padding: 0 10px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.underline-coloured-blue {
+  border-color: $blue;
+
+  i {
+    color: $blue;
+  }
+
+  .tab-btn {
+    background-color: $blue;
+  }
+}
+
+.underline-coloured-orange {
+  border-color: $orange;
+
+  i {
+    color: $orange;
+  }
+
+  .tab-btn {
+    background-color: $orange;
+  }
+}
+
+.underline-coloured-green {
+  border-color: $green;
+
+  i {
+    color: $green;
+  }
+
+  .tab-btn {
+    background-color: $green;
+  }
+}
+
+.underline-coloured-red {
+  border-color: $red;
+
+  i {
+    color: $red;
+  }
+
+  .tab-btn {
+    background-color: $red;
+  }
+}
+
+.underline-coloured-blue-grey {
+  border-color: $blue-grey;
+
+  i {
+    color: $blue-grey;
+  }
+
+  .tab-btn {
+    background-color: $blue-grey;
+  }
+}
+
+.underline-coloured-grey {
+  border-color: $grey;
+}
+
+.heading-block-link,
+.heading-block-link:hover {
+  @extend .primary-font;
+  text-decoration: underline;
+}
+
+.ember-modal-dialog .heading-block {
+
+  h1 {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  i {
+    font-size: 1.8rem;
+    line-height: 20px;
+  }
+
+}
+
+/*doc
+---
+title: Info Boxes
+name: info-boxes
+category: Components
+---
+
+```html_example
+<div class="info-box">
+  <div class="heading-block underline-coloured-green has-tab-btn">
+    <h2>Project Information</h2>
+    <i class="icon-location"></i>
+    <a href="#" class="tab-btn"><i class="icon-down"></i></a>
+  </div>
+  <div class="grid">
+    <div class="col-1-2">
+      <h3>Title</h3>
+      <p>Attribute</p>
+    </div>
+    <div class="col-1-2">
+      <h3>Title</h3>
+      <p>Attribute</p>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="col-1-2">
+      <h3>Title</h3>
+      <p>Attribute</p>
+    </div>
+    <div class="col-1-2">
+      <h3>Title</h3>
+      <p>Attribute</p>
+    </div>
+  </div>
+</div>
+```
+*/
+
+.info-box {
+  font-size: 1.4rem;
+  line-height: 1;
+
+  .heading-block {
+
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 1.8rem;
+      margin-bottom: 0;
+    }
+
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+
+  h3, h4, h5, h6 {
+    color: $grey-extra-dark;
+    margin-bottom: 5px;
+    line-height: 1.3;
+  }
+
+  p, ul {
+    margin-bottom: 20px;
+  }
+
+  ul {
+    line-height: 1.5;
+  }
+
+}
+
+.info-description {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  color: $black;
+}
+
+.expand-outer {
+  box-sizing: content-box;
+  position: relative;
+  padding-bottom: 40px;
+  overflow: hidden;
+
+  &.expanded,
+  &.is-animating {
+
+    .expand-baseline {
+      opacity: 0;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .tab-btn i:before {
+      content: '\e807';
+    }
+
+  }
+}
+
+.expand-baseline,
+.expand-baseline:hover {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  background: #fff;
+  line-height: 39px;
+  opacity: 1;
+  transition: opacity 250ms ease;
+
+  i {
+    font-size: 24px;
+  }
+
+  span {
+    text-decoration: underline;
+  }
+}
+
+.expand-baseline.unstyle-btn {
+  border-bottom: 1px solid #ddd;
+}
+
+@media screen and (max-width: 767px) {
+
+  .info-box {
+
+    .layout-thumb {
+      text-align: center;
+    }
+
+    [class*='col-'] {
+      margin-bottom: 5px
+    }
+
+    .heading-block {
+
+      h2 {
+        font-size: 1.4rem;
+        line-height: 1.5;
+        margin: 0 0 10px 0;
+      }
+
+      .colour-btn-orange {
+        float: none;
+      }
+
+    }
+
+  }
+
+}
+
+
+/*doc
+---
+title: Notifications
+name: notifications
+category: Components
+---
+
+```html_example
+<div class="bg-teal" style="padding: 20px;">
+  <a href="#" class="notifications bg-red">
+    <span class="icon-circle small-icon bg-white text-red"><i class="icon-bell"></i></span>
+    <span class="notification-count">10</span>
+  </a>
+  <a href="#" class="notifications bg-green">
+    <span class="icon-circle small-icon bg-white text-green"><i class="icon-bell"></i></span>
+    <span class="notification-count">10</span>
+  </a>
+  <a href="#" class="notifications bg-orange">
+    <span class="icon-circle small-icon bg-white text-orange"><i class="icon-bell"></i></span>
+    <span class="notification-count">10</span>
+  </a>
+  <a href="#" class="notifications bg-blue">
+    <span class="icon-circle small-icon bg-white text-blue"><i class="icon-bell"></i></span>
+    <span class="notification-count">10</span>
+  </a>
+</div>
+```
+*/
+
+.notifications {
+  @extend .primary-font-bold;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  padding: 0 8px 0 0;
+  line-height: 24px;
+  border-radius: 24px;
+
+  .icon-circle {
+    margin-left: -1px;
+    vertical-align: top;
+  }
+}
+
+/*doc
+---
+title: Panels
+name: panels
+category: Components
+---
+
+```html_example
+<div class="panel bg-grey-light">
+  <div class="grid">
+    <div class="col-1-4">
+      <h3>Title</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+    </div>
+    <div class="col-1-4">
+      <h3>Title</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+    </div>
+    <div class="col-1-4">
+      <h3>Title</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+    </div>
+    <div class="col-1-4">
+      <h3>Title</h3>
+      <p>Lorem ipsum dolor sit amet laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.</p>
+    </div>
+  </div>
+</div>
+```
+*/
+
+.panel {
+  padding: 20px;
+  border-radius: 3px;
+}
+
+/*doc
+---
+title: Days of Week
+name: days-of-week
+category: Components
+---
+
+```html_example
+<ul class="days-of-week">
+  <li>
+    <strong>Sun</strong>
+    <div class="dot bg-orange"></div>
+  </li>
+  <li>
+    <strong>Mon</strong>
+    <div class="dot bg-orange"></div>
+  </li>
+  <li>
+    <strong>Tue</strong>
+    <div class="dot bg-grey"></div>
+  </li>
+  <li>
+    <strong>Wed</strong>
+    <div class="dot bg-grey"></div>
+  </li>
+  <li>
+    <strong>Thu</strong>
+    <div class="dot bg-orange"></div>
+  </li>
+  <li>
+    <strong>Fri</strong>
+    <div class="dot bg-grey"></div>
+  </li>
+  <li>
+    <strong>Sat</strong>
+    <div class="dot bg-grey"></div>
+  </li>
+</ul>
+```
+
+*/
+
+.days-of-week {
+  @extend .no-list-style;
+}
+
+.days-of-week li {
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0 10px 10px 0;
+  text-align: center;
+}
+
+.days-of-week strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.dot {
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  margin: 0 auto;
+}
+
+
+/*
+  Alert messages - not included in styleguide due to fixed position...
+*/
+
+$alertVerticalPadding: 23px;
+
+.alert {
+  display: block;
+  padding: $alertVerticalPadding 30px;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  font-size: 1.6rem;
+  animation-name: animateUp;
+  animation-duration: 500ms;
+  background: rgba(50,83,103,.95);
+  color: #fff;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 2500ms cubic-bezier(0.550, 0.085, 0.680, 0.530);
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+
+  &.alert-success {
+    background: $green;
+
+    .alert-message {
+      padding-left: 70px;
+    }
+
+    .alert-message:before {
+      content: '\e81c';
+      color: $green;
+    }
+  }
+
+  &.alert-warning,
+  &.alert-danger {
+    background: #9E0000;
+
+    .alert-message {
+      padding-left: 70px;
+    }
+
+    .alert-message:before {
+      content: '\e814';
+      color: #9E0000;
+    }
+  }
+
+  &.exiting {
+    opacity: 0;
+  }
+}
+
+.alert-message {
+  position: relative;
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+
+  &:before {
+    font-family: 'fontello';
+    position: absolute;
+    left: 20px;
+    top: -9px;
+    font-size: 1.6rem;
+    background: #fff;
+    border-radius: 100%;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+  }
+}
+
+@keyframes animateUp {
+  0%    {transform: translateY(76px);}
+  100%  {transform: translateY(0);}
+}
+
+// Position flash message above action bar when present:
+.has-action-bar .alert {
+  padding-bottom: 85px;
+  z-index: 998;
+}
+
+// If submit panel visible, just display flash message fixed to bottom of page:
+.submit-panel-open {
+
+  .alert {
+    padding-bottom: $alertVerticalPadding;
+    z-index: 1000;
+  }
+
+}
+
+
+/*doc
+---
+title: Labels
+name: labels
+category: Components
+---
+
+TODO: Label/time label styles need consolidating.
+
+```html_example
+<span class="label-blue">Draft</span>
+<span class="label-orange">Submitted</span>
+<span class="label-green">Accepted</span>
+<div class="time-label bg-green">Today</div>
+<div class="time-label bg-orange-light">10 days ago</div>
+<div class="time-label bg-red">44 days ago</div>
+```
+*/
+
+.label-blue,
+.label-orange,
+.label-green,
+.label-grey,
+.label-red ,
+.label-grey-light,
+.time-label {
+  @extend .primary-font-bold;
+  display: inline-block;
+  padding: 0 8px;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+}
+
+table {
+
+  .label-blue,
+  .label-orange,
+  .label-green,
+  .label-grey,
+  .label-red,
+  .label-grey-light,
+  .time-label {
+    min-width: 95px;
+  }
+
+}
+
+h1 {
+
+  .label-blue,
+  .label-orange,
+  .label-green,
+  .label-grey,
+  .label-red,
+  .label-grey-light,
+  .time-label {
+    margin-bottom: 4px;
+  }
+
+}
+
+.label-blue {
+  background: $blue;
+}
+
+.label-orange {
+  background: $orange;
+}
+
+.label-green {
+  background: $green;
+}
+
+.label-red {
+  background: $red;
+}
+
+.label-grey {
+  background: $grey-dark;
+}
+
+.label-grey-light {
+  background: $grey-light;
+  color: $grey-dark;
+}
+
+/*doc
+---
+title: Actions Bar
+name: actions-bar
+category: Components
+---
+
+*Note: `.actions-bar` element usually has class `fixed` but omitted for styleguide.*
+
+```html_example
+<div class="actions-bar">
+  <div class="max-1210">
+    <div class="grid">
+      <div class="col-1-2">
+        <div class="actions-bar-help">
+          <strong>Next Step: </strong> Submit TMP for review
+        </div>
+      </div>
+      <div class="col-1-2 align-right">
+        <button>Submit TMP</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
+
+.actions-bar {
+  background: $grey-light;
+  padding: 12px 0;
+  border-top: 1px solid $grey;
+  opacity: 1;
+  transition: opacity 200ms ease;
+
+  &.fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+  }
+
+  &.disabled {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .col-1-2 {
+    margin: 0;
+  }
+}
+
+.actions-bar-help {
+  font-size: 1.6rem;
+  color: #535353;
+  line-height: 37px;
+
+  .link-style,
+  .link-style:active,
+  .link-style:focus,
+  .link-style:hover {
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  .actions-bar {
+
+    .link-style {
+      padding: 8px 0;
+      float: left;
+    }
+
+    button {
+      padding: 8px 20px;
+    }
+
+    .btn-icon-right {
+      padding: 10px 35px 10px 15px;
+    }
+
+    .link-style,
+    button {
+      font-size: 1.2rem;
+    }
+
+  }
+
+  .actions-bar-help {
+    display: none;
+  }
+
+}
+
+/*doc
+---
+title: Submit Options Section
+name: submit-options
+category: Components
+---
+
+Needs to be used in conjunction with relevant ember components (shared/fixed actions bar,
+tmp-view, worksite-view etc). Toggling the element on/off, scrolling to it when opened etc.
+are handled via ember components.
+NOTE: needs to be last element on page in most instances where it is used.
+
+```html_example
+<div style="overflow: hidden;padding: 20px;"> <!-- style guide only styles -->
+<div class="submit-options opened">
+  <div class="submit-options-inner review-box">
+    <h3 class="underline-coloured-blue-grey">Review Worksite</h3>
+    <div class="review-type">
+      <div class="element-group-wrap">
+        <h3 class="element-group-label">Action</h3>
+        <div class="element-wrap radio-button">
+          <input type="radio" name="isApproval" value="true">
+          <label>Approve</label>
+        </div>
+        <div class="element-wrap radio-button">
+          <input type="radio" name="isApproval" value="false">
+          <label>Report Issue</label>
+        </div>
+      </div>
+    </div> <!-- .review-type -->
+    <div class="review-on-behalf-of">
+      <div class="element-group-wrap">
+        <div class="element-wrap">
+          <input id="review-on-behalf-of" type="checkbox" name="isOnBehalfOf">
+          <label for="review-on-behalf-of">On behalf of:</label>
+        </div>
+        <input disabled="" type="text" class="inline-field">
+      </div>
+    </div> <!-- .review-on-behalf-of -->
+    <div class="element-wrap">
+      <label>Notes <span class="text-red">*</span></label>
+      <textarea></textarea>
+    </div>
+    <div class="align-right review-actions">
+      <button class="link-style">Cancel</button>
+      <button class="disabled" disabled="">Submit Review</button>
+    </div> <!-- .review-actions -->
+  </div> <!-- .submit-options-inner -->
+</div> <!-- .submit-options -->
+</div> <!-- /style guide only styles -->
+```
+*/
+
+.submit-options {
+  position: relative;
+  z-index: 1;
+
+  &.opened {
+    z-index: 998;
+  }
+
+  &.opened:before {
+    content: '';
+    position: absolute;
+    width: 6000px;
+    height: 100%;
+    left: -3000px;
+    top: 0;
+    background: $grey-light;
+    z-index: 0;
+  }
+
+  .underline-coloured-blue-grey {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+  }
+}
+
+.submit-options-inner {
+  position: relative;
+  z-index: 5;
+  padding: 40px 0;
+}
+
+.rounded-wrapper {
+  padding: 20px;
+  background: $grey-light;
+  border-radius: 6px;
+}
+
+/*doc
+---
+title: Table Panel
+name: table-panel
+category: Components
+---
+
+```html_example
+<div class="ember-view panel table-panel bg-grey-light margin-btm-20 tmp-collection">
+  <div class="heading-block margin-btm-20">
+    <h3 class="table-panel-heading">TMP: 1</h3>
+  </div>
+  <table class="expandable-rows orange">
+    <tr>
+      <th>Version</th>
+      <th>Category</th>
+      <th><span class="hide-mob">Start Date</span></th>
+      <th><span class="hide-mob">End Date</span></th>
+      <th></th>
+    </tr>
+    <tr class="ember-view standard-row">
+      <td class="revision-first-col">v0 Draft</td>
+      <td>Mobile rolling</td>
+      <td><span class="hide-mob">09 Dec 2015</span></td>
+      <td><span class="hide-mob">16 Dec 2015</span></td>
+      <td class="links-column">
+        <span class="link-style show-map-link hide-mob">show map</span>
+        <div class="revision-btns">
+          <a href="/tmps/drafts/1" class="colour-btn-orange small-btn ember-view">View TMP</a>
+        </div>
+      </td>
+    </tr>
+    <!-- Additional row is conditionally output via Ember component:
+    <tr class="additional-row expanded">
+      <td colspan="5">Content goes here</td>
+    </tr>
+    -->
+  </table>
+</div>
+```
+*/
+
+.table-panel-heading {
+  font-size: 2rem;
+  line-height: 31px;
+}
+
+.expandable-rows {
+
+  > tr > td {
+    border-bottom: 1px solid $grey;
+    vertical-align: middle;
+  }
+
+  > .standard-row.expanded {
+    cursor: default;
+
+    > td {
+      border-bottom: none;
+    }
+  }
+
+  .standard-row {
+
+    td:first-child,
+    th:first-child {
+      @extend .primary-font-bold;
+    }
+
+  }
+
+  td:first-child,
+  th:first-child {
+    padding-left: 15px;
+  }
+
+  .standard-row:hover td,
+  .expanded td {
+    background: #fff;
+  }
+
+  td {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .additional-row td {
+    padding-top: 0;
+    vertical-align: top;
+  }
+
+}
+
+.additional-row .image-wrap {
+  border-radius: 5px;
+}
+
+.revision-additional-text {
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 767px) {
+
+  .table-panel {
+    padding: 10px;
+    font-size: 1.2rem;
+  }
+
+  .heading-block .table-panel-heading {
+    float: none;
+    margin-bottom: 10px;
+  }
+
+  .expandable-rows {
+
+    th,
+    td {
+      padding: 10px 10px 10px 0;
+      font-size: 1.1rem;
+    }
+
+  }
+
+  .revision-additional-text {
+    margin-bottom: 10px;
+  }
+
+  .revision-additional-text,
+  .revision-additional-text [class*='text-'] {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+
+}
+
+/*
+-----------------------------------------
+OMMITTED FROM STYLEGUIDE: Item selector
+-----------------------------------------
+*/
+
+.item-selector-label {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 1.5rem;
+}
+
+.item-selector-select {
+  display: inline-block;
+  width: auto;
+  min-width: 400px;
+}
+
+@media screen and (max-width: 768px) {
+
+  .item-selector-btn,
+  .item-selector-select {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+}
+
+/*doc
+---
+title: File List
+name: file-list
+category: Components
+---
+
+```html_example
+<ul class="file-list">
+  <li class="file-item file-to-upload">
+    <span class="file-name">filename.pdf</span>
+    <a class="file-icon delete-file" href="#"><i class="icon icon-cross"></i></a>
+  </li>
+  <li class="file-item uploaded-file">
+    <span class="file-name">another-filename.pdf</span>
+    <a class="file-icon delete-file" href="#"><i class="icon icon-tick"></i></a>
+  </li>
+</ul>
+```
+*/
+
+.file-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.file-item {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 5px 10px 5px 40px;
+  margin-bottom: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 6px;
+  background: #fff;
+  position: relative;
+  font-size: 1.2rem;
+  overflow: hidden;
+}
+
+.file-item img {
+  width: 120px;
+  height: 120px;
+}
+
+.file-name {
+  @extend .primary-font-bold;
+  text-decoration: none;
+  margin-right: 5px;
+
+  i {
+    font-size: 1.4rem;
+    line-height: 1;
+    margin-right: 2px;
+  }
+}
+
+.file-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  line-height: 25px;
+  font-size: 1rem;
+}
+
+.delete-file-icon {
+  cursor: pointer;
+}
+
+.file-size {
+  color: $grey-dark;
+}
+
+.file-to-upload {
+  border-color: $blue;
+
+  .file-name {
+    color: $blue;
+  }
+
+  .file-icon {
+    background-color: $blue;
+  }
+}
+
+.uploaded-file {
+  border-color: $green;
+
+  .file-name {
+    color: $green;
+  }
+
+  .file-icon {
+    background-color: $green;
+  }
+}
+
+.oversized-file {
+  border-color: $red;
+
+  .file-name {
+    color: $red;
+  }
+
+  .file-icon {
+    background-color: $red;
+  }
+}
+
+$thumbSize: 80px;
+
+.history-uploaded-file {
+  float: left;
+  margin: 0 15px 15px 0;
+  width: $thumbSize;
+  overflow: hidden;
+}
+
+.history-thumb,
+.history-icon {
+  display: block;
+  width: 100%;
+  height: $thumbSize;
+  margin-bottom: 5px;
+  border: 2px solid $blue;
+  border-radius: 4px;
+}
+
+.history-thumb {
+  background-position: center center;
+  background-size: cover;
+}
+
+.history-icon {
+  background: #fff;
+  text-align: center;
+
+  i {
+    font-size: 4rem;
+    line-height: $thumbSize;
+    color: $blue;
+  }
+}
+
+.history-filename {
+  color: $blue;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 1.2rem;
+}
+
+/*doc
+---
+title: Login Box
+name: login-box
+category: Components
+---
+
+Note: Component is usually wrapped in `.login-box-wrap` class. Omitted here and
+replaced with inline styles so that component doesn't cover full screen.
+
+```html_example
+<div class="bg-teal" style="text-align: center;padding: 30px;">
+  <div class="login-box">
+    <div class="login-box-logo align-center">
+      <img src="assets/images/myworksites-logo.png" alt="MyWorksites">
+    </div>
+    <form class="t-login-form clearfix">
+      <div class="element-wrap">
+        <input placeholder="Email address" type="email">
+      </div>
+      <div class="element-wrap">
+        <input placeholder="Password" type="password">
+      </div>
+      <button type="submit" class="login-box-btn colour-btn-transparent">Login</button>
+    </form>
+  </div>
+</div>
+```
+*/
+
+.login-box-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #325469;
+  z-index: 1000;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+  }
+}
+
+.login-box {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: 200px;
+
+  .element-wrap {
+    margin-bottom: 15px;
+  }
+
+  input {
+    color: $teal;
+  }
+
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    -webkit-text-fill-color: $teal !important;
+  }
+}
+
+.login-box-logo {
+  display: block;
+  text-align: center;
+  margin-bottom: 25px;
+
+  img {
+    display: inline-block;
+    height: 55px;
+    width: auto;
+  }
+}
+
+.login-box-btn {
+  width: 100%;
+  text-align: center;
+}
+
+// Style guide fix:
+.hgt-body .login-box {
+  margin: 0;
+}
+
+/*
+------------------------------------------------------------------
+OMMITTED FROM STYLEGUIDE: Simple expand contract component
+(Too much functionality tied up with Ember to show in style guide)
+------------------------------------------------------------------
+*/
+
+.simple-expand-contract {
+  box-sizing: content-box;
+  padding-bottom: 30px;
+  overflow: hidden;
+  position: relative;
+
+  &.expand-disabled {
+    padding-bottom: 0;
+
+    .simple-expand-contract-trigger {
+      display: none;
+    }
+  }
+
+  &.is-animating .simple-expand-contract-trigger:before,
+  &.expanded .simple-expand-contract-trigger:before,
+  &.expand-disabled .simple-expand-contract-trigger:before {
+    opacity: 0;
+  }
+}
+
+.simple-expand-contract-trigger {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: right;
+  background: #fff;
+
+  &:hover {
+    background: #fff;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    opacity: 1;
+    -webkit-transition: opacity 250ms ease;
+    transition: opacity 250ms ease;
+    background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  }
+
+  span {
+    display: inline-block;
+    line-height: 30px;
+    position: relative;
+    z-index: 10;
+    text-transform: lowercase;
+  }
+}
+
+/*doc
+---
+title: Actions menu
+name: actions-menu
+category: Components
+---
+
+Note: Menu only shown on button click in app (handled by Ember component). Also,
+`.clearfix` wrapper and `float-right` class not usually required, added for style
+guide layout only.
+
+```html_example
+<div class="clearfix">
+  <div class="actions-menu-wrap float-right">
+    <div class="action-menu">
+      <ul>
+        <li><div class="action-menu-link">Issue access permit...</div></li>
+        <li><div class="action-menu-link">Decline access permit...</div></li>
+      </ul>
+    </div>
+    <button class="colour-btn-white action-menu-btn">More actions <i class="icon-up-big"></i></button>
+  </div>
+</div>
+```
+*/
+
+.actions-menu-wrap {
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+}
+
+.action-menu-btn {
+  padding-left: 15px;
+  padding-right: 15px;
+
+  i {
+    margin-left: 5px;
+  }
+}
+
+.action-menu {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  min-width: 185px;
+  margin-bottom: 10px;
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid $blue-dark;
+  padding: 15px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  text-align: left;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+}
+
+.action-menu-link {
+  display: block;
+  cursor: pointer;
+  padding: 3px 0;
+  color: $blue-dark;
+  font-size: 1.4rem;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  .actions-menu-wrap {
+    float: left;
+  }
+
+  .action-menu {
+    right: auto;
+    left: 0;
+  }
+
+}
+
+// Style guide fix:
+.hgt-body .action-menu {
+  opacity: 0;
+}
+
+.hgt-body .actions-menu-wrap:hover .action-menu {
+  opacity: 1;
+}
+
+/*
+-----------------------------------------
+OMMITTED FROM STYLEGUIDE: Map overlay
+-----------------------------------------
+*/
+
+$overlayHeadingHeight: 50px;
+$overlayFooterHeight: 50px;
+
+.map-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: #fff;
+
+  .col-1-2 {
+    margin: 0;
+  }
+}
+
+.map-overlay-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $overlayHeadingHeight;
+  background: $blue-dark;
+  color: #fff;
+}
+
+.map-overlay-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: $overlayFooterHeight;
+  background: $grey-light;
+  border-top: 1px solid $grey;
+}
+
+.map-overlay-header,
+.map-overlay-footer {
+  padding: 0 20px;
+  line-height: 50px;
+  z-index: 9999;
+
+  h2 {
+    line-height: 50px;
+  }
+}
+
+.close-overlay {
+  display: block;
+  cursor: pointer;
+  font-size: 1.4rem;
+
+  i {
+    margin-left: 5px;
+    vertical-align: middle;
+  }
+}
+
+$mapPanelWidth: 360px;
+
+.map-element {
+  position: absolute;
+  top: $overlayHeadingHeight;
+  left: 0;
+  width: calc(100vw - #{$mapPanelWidth});
+  height: calc(100vh - #{$overlayHeadingHeight} - #{$overlayFooterHeight});
+  min-height: 0 !important;
+}
+
+.map-overlay-panel {
+  position: fixed;
+  top: $overlayHeadingHeight;
+  right: 0;
+  height: calc(100vh - #{$overlayHeadingHeight} - #{$overlayFooterHeight});
+  width: $mapPanelWidth;
+  overflow-y: auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.map-overlay .atob, .map-overlay .btoa {
+  width: auto;
+  display: inline;
+}
+
+// Roady style overrides:
+
+div#types {
+  position: static;
+}
+
+.type-title {
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-color: $orange;
+  line-height: 28px;
+}
+
+.selection-prompt h3 {
+  @extend .primary-font;
+}
+
+.type-description {
+  margin-bottom: 20px;
+}
+
+.edit-lane-counts {
+  @extend .small-btn;
+  @extend .button;
+  @extend .colour-btn-orange;
+
+  &[data-visible="false"] {
+    display: none;
+  }
+}
+
+.lane-selector .select-boxes {
+  margin-top: 10px;
+  height: auto;
+  overflow: hidden;
+}
+
+.cancel-lane-count-edit {
+  display: inline-block;
+  margin-top: 5px;
+  color: $orange;
+}
+
+.feedback {
+  @extend .primary-font-italic;
+  bottom: auto;
+  top: 20px;
+  width: 100%;
+  padding: 5px;
+  border: 1px dashed #d4d4d4;
+}
+
+#save-button {
+  margin-bottom: 70px;
+  overflow: hidden;
+}
+
+#type-buttons button,
+#save-button button {
+  @extend .small-btn;
+  @extend .button;
+  @extend .colour-btn-orange;
+  float: right;
+  margin-left: 5px;
+}
+
+#toggle-config-panel-btn,
+#back-to-map-btn {
+  display: none;
+}
+
+div.spinner-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border-radius: 0;
+  text-align: center;
+
+  .spinner {
+    display: none !important;
+  }
+
+  &[data-visible="true"]:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+  }
+
+  &[data-visible="true"]:after {
+    content: '\e817';
+    font-family: "fontello";
+    color: #fff;
+    font-size: 4rem;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-animation: spin 1.8s linear infinite;
+    -moz-animation: spin 1.8s linear infinite;
+    animation: spin 1.8s linear infinite;
+  }
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@media screen and (max-width: 767px) {
+
+  .map-overlay-error {
+    position: absolute;
+    top: 100%;
+    z-index: 999;
+    line-height: 1.3;
+    width: 100%;
+    left: 0;
+    background: rgba(255,255,255,.8);
+    padding: 10px 5px 10px 55px;
+    font-size: 1.4rem;
+    text-align: left;
+  }
+
+  $mobOverlayHeadingHeight: 50px;
+  $mobOverlayFooterHeight: 50px;
+
+  .map-overlay-header {
+    height: $mobOverlayHeadingHeight;
+    line-height: $mobOverlayHeadingHeight;
+
+    h2 {
+      font-size: 1.4rem;
+      line-height: $mobOverlayHeadingHeight;
+    }
+  }
+
+  .close-overlay {
+    position: fixed;
+    top: 0;
+    right: 10px;
+    font-size: 0;
+
+    i {
+      font-size: 1.4rem;
+      line-height: $mobOverlayHeadingHeight;
+    }
+  }
+
+  .map-element {
+    top: $mobOverlayHeadingHeight;
+    right: auto;
+    left: 0;
+    height: calc(100vh - #{$mobOverlayHeadingHeight} - #{$mobOverlayFooterHeight}) !important;
+    width: 100% !important;
+  }
+
+  #toggle-config-panel-btn {
+    position: fixed;
+    display: block;
+    top: calc(#{$mobOverlayHeadingHeight} + 10px);
+    right: 10px;
+    z-index: 1000;
+  }
+
+  #back-to-map-btn {
+    position: fixed;
+    display: block;
+    margin: 0;
+    right: 0;
+    top: 10px;
+    border-radius: 3px 0 0 3px;
+    border: 1px solid #ddd;
+    border-right: none;
+  }
+
+  .map-overlay-panel {
+    top: $mobOverlayHeadingHeight;
+    height: calc(100vh - #{$mobOverlayHeadingHeight} - #{$mobOverlayFooterHeight});
+    width: 100%;
+    z-index: 1001;
+    padding-top: 40px;
+    transition: all 400ms ease;
+    transform: translateX(-100%);
+    overflow: visible;
+    -webkit-overflow-scrolling: touch;
+
+    .spinner-background {
+      transform: translateX(100%);
+    }
+
+    &.active {
+      transform: translateX(0);
+      overflow-x: hidden;
+      overflow-y: scroll;
+
+      .spinner-background {
+        transform: none;
+      }
+    }
+  }
+
+  .panel-overlay-active {
+    position: fixed;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+
+    .map-overlay-panel,
+    .map-overlay-header,
+    .map-overlay-footer {
+      pointer-events: auto;
+    }
+  }
+
+}
+
+
+/*
+---------------------------------------------
+OMMITTED FROM STYLEGUIDE: Map thumbnail wrap
+---------------------------------------------
+*/
+
+.map-thumb-wrap {
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.is-outdated:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(0,0,0,0.6);
+}
+
+.image-overlay-message {
+  @extend .primary-font-bold;
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
+  text-align: center;
+  width: 100%;
+}
+
+/*doc
+---
+title: Quick Links List
+name: quick-links
+category: Components
+---
+
+```html_example
+<ul class="quick-links blue">
+  <li><a href="#" class="quick-link">View Draft Worksites <i class="icon-arrow-right"></i></a></li>
+  <li><a href="#" class="quick-link">View Submitted Worksites <i class="icon-arrow-right"></i></a></li>
+</ul>
+<ul class="quick-links orange">
+  <li><a href="#" class="quick-link">View Draft Worksites <i class="icon-arrow-right"></i></a></li>
+  <li><a href="#" class="quick-link">View Submitted Worksites <i class="icon-arrow-right"></i></a></li>
+</ul>
+<ul class="quick-links green">
+  <li><a href="#" class="quick-link">View Draft Worksites <i class="icon-arrow-right"></i></a></li>
+  <li><a href="#" class="quick-link">View Submitted Worksites <i class="icon-arrow-right"></i></a></li>
+</ul>
+```
+*/
+
+.quick-links {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  i {
+    float: right;
+  }
+
+  &.blue {
+
+    .quick-link {
+      color: $blue;
+    }
+
+    .quick-link:hover {
+      background: $blue;
+      border-color: $blue;
+      color: #fff;
+    }
+
+  }
+
+  &.orange {
+
+    .quick-link {
+      color: $orange;
+    }
+
+    .quick-link:hover {
+      background: $orange;
+      border-color: $orange;
+      color: #fff;
+    }
+
+  }
+
+  &.green {
+
+    .quick-link {
+      color: $green;
+    }
+
+    .quick-link:hover {
+      background: $green;
+      border-color: $green;
+      color: #fff;
+    }
+
+  }
+}
+
+.quick-link {
+  display: block;
+  padding: 7px 10px;
+  border: 1px solid $grey;
+  border-radius: 3px;
+  text-decoration: none;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+
+/*
+---------------------------------------------
+OMMITTED FROM STYLEGUIDE: Missing items list
+(Used in worksite validation overlay)
+---------------------------------------------
+*/
+
+.missing-items-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.missing-item {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.missing-item-link {
+  display: block;
+  padding: 5px 0;
+  text-decoration: none;
+
+  i {
+    margin-right: 10px;
+  }
+}
+
+.missing-items-overview .underline-dotted {
+  margin-bottom: 20px;
+}
+
+/*doc
+---
+title: Home page notification
+name: home-page-notification
+category: Components
+---
+
+```html_example
+<div class="home-notification margin-btm-30">
+  Please contact your company admin to gain access to company specific functionality and data.
+</div>
+```
+*/
+
+.home-notification {
+  @extend .primary-font-bold;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  background: $red;
+  color: #fff;
+  border-radius: 3px;
+}
+
+/*doc
+---
+title: History items
+name: history-items
+category: Components
+---
+
+```html_example
+<div class="history-item clearfix margin-btm-20">
+  <div class="history-item-details">
+    <h3 class="margin-btm-5">Commented - 102 (1.0)</h3>
+    <div class="history-item-time">
+      8:11 AM, Jun 30, 2016
+    </div>
+  </div>
+  <div class="history-item-content comment-item">
+    <h3 class="margin-btm-5">Comment added by John Smith</h3>
+    Comment goes here.
+  </div>
+</div>
+<div class="history-item clearfix margin-btm-20">
+  <div class="history-item-details">
+    <h3 class="margin-btm-5">Submitted - 102 (1.0)</h3>
+    <div class="history-item-time">
+      8:10 AM, Jun 30, 2016
+    </div>
+  </div>
+    <div class="history-item-content revision-item">
+      <h3>Revision 1.0 submitted by John Smith</h3>
+    </div>
+</div>
+```
+*/
+
+.history-item-details {
+  display: inline-block;
+  vertical-align: top;
+  width: 15%;
+  margin-right: 4%;
+}
+
+.history-item-content {
+  @extend .primary-font-italic;
+  display: inline-block;
+  vertical-align: top;
+  width: 80%;
+  min-height: 52px;
+  border-radius: 3px;
+  padding: 15px;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 15px;
+    background: $grey-light;
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    transform: rotate(45deg);
+  }
+}
+
+.comment-item,
+.comment-item:before {
+  background: $grey-light;
+}
+
+.revision-item,
+.revision-item:before {
+  background: #ffe5c4;
+}
+
+.declined-item,
+.declined-item:before {
+  background: #efc5c3;
+}
+
+.accepted-item,
+.accepted-item:before {
+  background: #e6f1d3;
+}
+
+.notice-item,
+.notice-item:before {
+  background: #dcebf4;
+}
+
+@media screen and (max-width: 767px) {
+
+  .history-item-details {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .history-item-content {
+    width: 100%;
+    max-width: 100%;
+
+    &:before {
+      top: -3px;
+      left: 15px;
+    }
+
+  }
+
+}
+
+/*doc
+---
+title: Condition Group Wrappers
+name: condition-group-wrappers
+category: Components
+---
+
+```html_example
+<div class="condition-group check-boxes-group rounded-wrapper margin-btm-20 hide-overflow is-visible">
+  <div class="condition-group-header clearfix">
+    <label class="group-label text-14">
+      <input type="checkbox">
+      <span class="group-name">Worksite Group A</span>
+    </label>
+    <div class="float-right">
+      <span class="text-grey-dark text-12 margin-right-10">(1/2 selected)</span>
+      <button class="small-btn btn-icon-right">
+          Hide conditions <i class="icon-up"></i>
+      </button>
+    </div>
+  </div>
+  <div class="show-hide-element">
+    <div class="condition element-wrap checkbox use-button-style checked">
+      <input type="checkbox" checked>
+      <label>Worksite condition #1</label>
+    </div>
+    <div class="condition element-wrap checkbox use-button-style">
+      <input type="checkbox">
+      <label>Worksite condition #2</label>
+    </div>
+  </div>
+</div>
+```
+*/
+
+.condition-group {
+  padding: 15px;
+
+  .show-hide-element {
+    margin-top: 15px;
+  }
+}
+
+.condition-group-header {
+  position: relative;
+
+  input[type='checkbox'] {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    margin: 0;
+  }
+
+  .group-label {
+    float: left;
+    max-width: calc(100% - 270px);
+    font-size: 1.4rem;
+    line-height: 1.2;
+    margin: 0;
+    padding: 8px 0 0 20px;
+  }
+
+  .btn-wrap {
+    float: right;
+  }
+
+}
+
+.condition {
+  margin: 10px 0 0 0;
+}
+
+.custom-conditions .condition-group-header .group-label {
+  padding-left: 0;
+}
+
+.static-conditions-group {
+
+  .group-label {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+  }
+
+  .static-condition:last-of-type {
+    border-bottom: none;
+  }
+
+}
+
+.static-condition {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  padding: 10px 0;
+  border-bottom: 1px solid $grey;
+}
+
+.conditions-list .condition-group-header .group-label {
+  padding-left: 5px;
+}
+
+.listed-condition {
+  padding: 10px;
+  margin-bottom: 5px;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid $blue;
+
+  &.disabled {
+    border-color: $grey;
+  }
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.listed-condition-text {
+  float: left;
+  width: 80%;
+  font-size: 1.3rem;
+  line-height: 18px;
+}
+
+.listed-condition-links {
+  float: right;
+  width: 18%;
+  text-align: right;
+}
+
+@media screen and (max-width: 767px) {
+
+  .condition-group-header .group-label {
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+
+}
+
+/*
+-------------------------------------------------
+OMMITTED FROM STYLEGUIDE: Show/hide mixin styles
+-------------------------------------------------
+*/
+
+.show-hide-box {
+  position: relative;
+  padding-bottom: 40px;
+
+  &.is-visible {
+
+    .tab-btn i:before {
+      content: '\e807';
+    }
+
+    .expand-baseline {
+      display: none;
+    }
+
+  }
+}
+
+/*doc
+---
+title: Pagination
+name: pagination
+category: Components
+---
+
+Note: pagination is rendered via Ember add-on.
+
+```html_example
+<div class="pagination-centered">
+  <ul class="pagination">
+      <li class="arrow prev disabled"><a href="#">«</a></li>
+      <li class="active page-number"><a>1</a></li>
+      <li class="page-number"><a href="#" >2</a></li>
+      <li class="page-number"><a href="#" >3</a></li>
+      <li class="page-number"><a href="#" >4</a></li>
+      <li class="arrow next enabled-arrow"><a href="#">»</a></li>
+  </ul>
+</div>
+```
+*/
+
+.pagination-centered {
+  padding-top: 30px;
+  text-align: center;
+}
+
+.pagination {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+
+  li {
+    display: inline-block;
+    font-size: 1.6rem;
+  }
+
+  a {
+    @extend .primary-font-bold;
+    text-decoration: none;
+    display: block;
+    padding: 0 5px;
+  }
+
+  .active a {
+    color: $orange;
+  }
+
+  .prev a,
+  .next a {
+    font-size: 0;
+
+    &:before {
+      display: inline-block;
+      font-family: "fontello";
+      font-size: 1.6rem;
+      line-height: 1;
+    }
+  }
+
+  .prev a:before {
+    content: '\e805';
+  }
+
+  .next a:before {
+    content: '\e806';
+  }
+}
+
+
+/*doc
+---
+title: Jumper links
+name: jumper-links
+category: Components
+---
+
+Jumper links currently used on home page (may be replaced following proper design)
+
+```html_example
+<div class="clearfix">
+  <a href="#" class="jumper-link">Create worksite <i class="icon-plus"></i></a>
+</div>
+```
+*/
+
+.jumper-link {
+  float: left;
+  padding: 15px 20px;
+  width: 23.5%;
+  margin-left: 2%;
+  margin-bottom: 20px;
+  background: #3386ba;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 3px;
+  font-size: 1.6rem;
+  line-height: 30px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  i {
+    float: right;
+    font-size: 2.5rem;
+  }
+
+  .icon-plus {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+
+  .jumper-link {
+    font-size: 1.4rem;
+    padding: 10px 15px;
+
+    i {
+      font-size: 2rem;
+    }
+
+    .icon-plus {
+      font-size: 3rem;
+    }
+  }
+
+}
+
+@media screen and (min-width: 960px) and (max-width: 1150px) {
+
+  .jumper-link {
+    width: 24%;
+    margin-left: 1.3%;
+  }
+
+}
+
+@media screen and (min-width: 481px) and (max-width: 959px) {
+
+  .jumper-link {
+    width: 49%;
+    margin-left: 2%;
+
+    &:nth-child(2n+1) {
+      margin-left: 0;
+    }
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .jumper-link {
+    width: 100%;
+    margin-left: 0;
+  }
+
+}
+
+.password-reset-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #325469;
+  z-index: 1000;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+  }
+}
+
+.password-reset-box {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: 200px;
+
+  .element-wrap {
+    margin-bottom: 15px;
+  }
+
+  input {
+    color: $teal;
+  }
+
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    -webkit-text-fill-color: $teal !important;
+  }
+}

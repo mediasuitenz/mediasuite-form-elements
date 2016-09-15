@@ -1,0 +1,64 @@
+<h1>Radio Buttons</h1>
+<br><br>
+<p>When it comes to radio buttons, you can either use this <b>mediasuite-radio-buttons</b> control, or build it up yourself from individual
+ {{#link-to 'radio-button'}}mediasuite-radio-button{{/link-to}} controls.  The choice really is whether you want to format the data as this control requires, or handle that
+bit yourself.
+</p>
+<p>
+  <table>
+    <tr>
+      <th>Paramater</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+    <tr><td>groupLabel</td><td>string</td><td>Label</td></tr>
+    <tr><td>inlineGroupLabel</td><td>string</td><td>Inline label (dependent on styling - wraps in a span with a 'inline-group-label' class)</td></tr>
+    <tr><td>name</td> <td>string</td><td>By default the html attribute 'name' will be the same as the Ember supplied Id.  This allows you to set your own.</td></tr>
+    <tr><td>options</td> <td>[object]</td><td>Each object must have the <b>label</b> key, and optionally the <b>disabled</b></td></tr>
+    <tr><td>value</td> <td>object</td><td>The currently selected object from the options</td></tr>
+    <tr><td>errors</td> <td>[object]</td><td>Array of error objects.  Each object must contain a 'message' key to be displayed</td></tr>
+    <tr><td>update</td> <td>function (value(object))</td><td>Function called when a radio-button is selected. </td></tr>
+    <tr><td>useButtonStyle</td> <td>true or false(default)</td><td>Renders the radio buttons as actual buttons</td></tr>
+  </table>
+</p>
+
+<h3>Standard example</h3>
+{{mediasuite-radio-buttons
+  groupLabel="Select your favourite Gunter"
+  value=model.selected
+  options=model.options
+  update=(route-action 'favouriteCharacterChanged')
+}}
+
+<pre>
+  &#123;&#123;mediasuite-radio-buttons
+  groupLabel="Select your favourite Gunter"
+  value=model.selected
+  options=model.options
+  update=(route-action 'favouriteCharacterChanged')
+  &#125;&#125;
+</pre>
+
+<br><br>
+
+<h3>With Error, Button Style and Inline Label</h3>
+{{mediasuite-radio-buttons
+  useButtonStyle=true
+  inlineGroupLabel="Select your favourite Gunter"
+  value=model.selected
+  options=model.options
+  errors=model.errors
+  update=(route-action 'favouriteCharacterChanged')
+}}
+
+<pre>
+  &#123;&#123;mediasuite-radio-buttons
+  useButtonStyle=true
+  inlineGroupLabel="Select your favourite Gunter"
+  value=model.selected
+  options=model.options
+  errors=model.errors
+  update=(route-action 'favouriteCharacterChanged')
+  &#125;&#125;
+</pre>
+
