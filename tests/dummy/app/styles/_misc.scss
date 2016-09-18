@@ -1,0 +1,288 @@
+/*
+  Styleguide overrides:
+*/
+
+.hgt-pagehead-nav a:first-of-type {
+  display: none;
+}
+
+/*
+  Misc base styles:
+*/
+
+html {
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+pre {
+  font-family: 'courier';
+  color: #000;
+  border: 1px black solid;
+  background: lightcoral;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+#main {
+  padding-top: 30px;
+  padding-bottom: 100px; // Accounts for fixed action bar
+  overflow-x: hidden;
+
+  &.submit-panel-open {
+    padding-bottom: 0;
+  }
+}
+
+.show-map-link,
+.faux-link-cursor {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+
+  .show-map-link {
+    margin-right: 15px;
+  }
+
+}
+
+.min-height-115 {
+  min-height: 115px;
+}
+
+.min-height-198 {
+  min-height: 198px;
+}
+
+/*
+  Datepicker:
+*/
+
+.pika-button {
+  box-shadow: none;
+  text-shadow: none;
+  background: #fff;
+  text-align: center;
+}
+
+
+/*
+  Modal overlays:
+*/
+
+#modal-overlays {
+  position: relative;
+  z-index: 999;
+}
+
+.ember-modal-overlay.translucent {
+  background-color: rgba(255, 255, 255, .94);
+}
+
+.ember-modal-dialog {
+  width: 100%;
+  max-width: 590px;
+  padding: 30px;
+  background: none;
+  box-shadow: none;
+
+  h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/*
+  Modal add-on fix for dynamic heights, overflow
+*/
+
+.ember-modal-overlay {
+  text-align: center;
+  overflow-y: auto;
+  padding: 20px;
+
+  .big-heading {
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 2.5rem;
+      line-height: 1;
+    }
+
+    i {
+      font-size: 2rem;
+      line-height: 25px;
+    }
+  }
+}
+
+.ember-modal-overlay:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+
+.ember-modal-dialog {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+  position: static;
+  left: auto !important;
+  top: auto !important;
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+}
+
+@media screen and (max-width: 1024px) {
+
+  .ember-modal-overlay {
+    overflow-y: scroll; /* has to be scroll, not auto */
+    -webkit-overflow-scrolling: touch;
+  }
+
+}
+
+/*
+  Company User List Grid Hack (find better solution)
+*/
+
+.company-user-list-wrapper .col-1-2:nth-child(odd) {
+  clear: left;
+}
+
+/*
+  Feedback button
+*/
+
+#doorbell-button {
+  position: fixed;
+  left: 0;
+  top: 130px;
+  height: auto;
+  width: auto;
+  border-radius: 0 5px 5px 0;
+  font-size: 0;
+  right: auto;
+  bottom: auto;
+  padding: 10px;
+  background: $orange;
+
+  &:after {
+    content: '\e816';
+    font-family: "fontello";
+    font-size: 16px;
+    color: #fff;
+  }
+
+  &:before {
+    content: 'Give Feedback';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: #fff;
+    padding: 5px;
+    color: #333;
+    font-size: 11px;
+    text-shadow: none;
+    min-width: 109px;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    border-radius: 2px;
+    height: 100%;
+    margin-left: 10px;
+    line-height: 25px;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: all 350ms ease;
+  }
+
+  &:hover:before {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+/**
+  Animate jiggle
+*/
+
+.lil-bit-jiggly {
+  @extend .shake;
+  -webkit-animation-duration: 800ms;
+  animation-duration: 800ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes shake {
+  from, to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+@keyframes shake {
+  from, to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+.shake {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+}
+
+@media screen and (max-width: 767px) {
+
+  .search-options {
+
+    .inline-group-label {
+      display: block;
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+
+    label {
+      text-align: left;
+    }
+
+    .col-1-2 {
+      margin-bottom: 0;
+    }
+
+  }
+
+}

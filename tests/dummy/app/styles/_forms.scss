@@ -1,0 +1,801 @@
+/*doc
+---
+title: Form Inputs
+name: form-inputs
+category: Forms
+---
+
+```html_example
+<form action="#" method="post">
+  <fieldset class="grid">
+    <div class="col-1-4">
+      <div class="element-wrap">
+        <label for="input-1">Input Label</label>
+        <input type="text" id="input-1" placeholder="Placeholder text..." />
+      </div>
+    </div>
+    <div class="col-1-4">
+      <div class="element-wrap">
+        <label for="input-2">Textarea Label</label>
+        <textarea id="input-2" placeholder="Placeholder text..."></textarea>
+      </div>
+    </div>
+    <div class="col-1-4">
+      <div class="element-wrap">
+        <label for="input-3">Input Label</label>
+        <input type="password" id="input-3" placeholder="Placeholder text..." />
+      </div>
+    </div>
+    <div class="col-1-4">
+      <div class="element-wrap">
+        <label for="input-4">Input Label</label>
+        <input type="email" id="input-4" placeholder="Placeholder text..." />
+      </div>
+    </div>
+  </fieldset>
+  <fieldset class="grid">
+    <div class="col-1-4">
+      <div class="element-group-wrap-block">
+        <h3 class="element-group-label">Checkbox Group Label</h3>
+        <div class="element-wrap">
+          <input type="checkbox" name="option1" value="Option One" id="check-1" />
+          <label for="check-1">Option One</label>
+        </div>
+        <div class="element-wrap">
+          <input type="checkbox" name="option2" value="Option Two" id="check-2" />
+          <label for="check-2">Option Two</label>
+        </div>
+        <div class="element-wrap">
+          <input type="checkbox" name="option3" value="Option Three" id="check-3" />
+          <label for="check-3">Option Three</label>
+        </div>
+      </div>
+    </div>
+    <div class="col-3-4">
+      <div class="element-group-wrap">
+        <h3 class="element-group-label">Radio Buttons Label</h3>
+        <div class="element-wrap">
+          <input type="radio" name="group-name" id="radio-1" />
+          <label for="radio-1">Option One</label>
+        </div>
+        <div class="element-wrap">
+          <input type="radio" name="group-name" id="radio-2" />
+          <label for="radio-2">Option Two</label>
+        </div>
+        <div class="element-wrap">
+          <input type="radio" name="group-name" id="radio-3" />
+          <label for="radio-3">Option Three</label>
+        </div>
+        <div class="element-wrap">
+          <input type="radio" name="group-name" id="radio-4" />
+          <label for="radio-4">Option Four</label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset class="grid">
+    <div class="col-1-4">
+      <div class="element-wrap">
+        <label for="file-7">Choose drawings to upload</label>
+        <input type="file" id="file-7" />
+      </div>
+    </div>
+    <div class="col-3-4">
+      <h3 class="element-group-label">Radio Group Label</h3>
+      <div class="element-group-wrap thirds">
+        <div class="element-wrap">
+          <input type="checkbox" name="option4" value="Option One" id="check-4" />
+          <label for="check-4">Option One</label>
+        </div>
+        <div class="element-wrap">
+          <input type="checkbox" name="option5" value="Option Two" id="check-5" />
+          <label for="check-5">Option Two</label>
+        </div>
+        <div class="element-wrap">
+          <input type="checkbox" name="option6" value="Option Two" id="check-6" />
+          <label for="check-6">Option Three</label>
+        </div>
+        <div class="element-wrap">
+          <input type="checkbox" name="option7" value="Option Three" id="check-7" />
+          <label for="check-7">Option Four</label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset class="grid">
+    <div class="col-1-4">
+      <div class="element-wrap">
+        <label for="select-1">Select Label</label>
+        <select id="select-1">
+          <option>Option One</option>
+          <option>Option Two</option>
+          <option>Option Three</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-1-4">
+      <div class="element-group-wrap-block">
+        <h3 class="element-group-label">Radio Group Label</h3>
+        <div class="element-wrap">
+          <input type="radio" name="group-name" id="radio-5" />
+          <label for="radio-5">Radio Option Two</label>
+        </div>
+        <div class="element-wrap">
+          <input type="radio" name="group-name" id="radio-6" />
+          <label for="radio-6">Radio Option Three</label>
+        </div>
+        <div class="element-wrap">
+          <input type="radio" name="group-name" id="radio-7" />
+          <label for="radio-7">Radio Option One</label>
+        </div>
+      </div>
+    </div>
+    <div class="col-2-4">
+        <h3 class="element-group-label">Radio Group Label</h3>
+        <div class="element-group-wrap halves">
+          <div class="element-wrap">
+            <input type="checkbox" name="option4" value="Option One" id="check-4" />
+            <label for="check-4">Option One</label>
+          </div>
+          <div class="element-wrap">
+            <input type="checkbox" name="option5" value="Option Two" id="check-5" />
+            <label for="check-5">Option Two</label>
+          </div>
+          <div class="element-wrap">
+            <input type="checkbox" name="option6" value="Option Two" id="check-6" />
+            <label for="check-6">Option Three</label>
+          </div>
+          <div class="element-wrap">
+            <input type="checkbox" name="option7" value="Option Three" id="check-7" />
+            <label for="check-7">Option Four</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</form>
+```
+*/
+
+$elementSpacingBottom: 25px;
+
+label {
+  @extend .primary-font-bold;
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  color: #000;
+}
+
+.group-label {
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: #3f3f3f;
+
+  input[type='checkbox'],
+  input[type='radio'] {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px 0 15px;
+  }
+
+  button {
+    margin-left: 20px;
+  }
+}
+
+.inline-group-label {
+  @extend .primary-font-bold;
+  display: inline-block;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  color: #000;
+}
+
+.additional-label-text {
+  @extend .primary-font;
+  font-size: 1.8rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+  @extend .primary-font;
+  background: #fff;
+  display: block;
+  width: 100%;
+  border: 1px solid $grey-dark;
+  border-radius: 3px;
+  padding: 5px 8px;
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  color: #000;
+
+  &.inline-field {
+    display: inline-block;
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+.currency-field {
+  position: relative;
+
+  &:before {
+    @extend .primary-font-bold;
+    content: '$';
+    position: absolute;
+    left: 5px;
+    top: 0;
+    line-height: 25px;
+    color: #888;
+  }
+
+  input {
+    max-width: 80px;
+    padding-left: 12px !important;
+  }
+}
+
+.file-picker {
+  vertical-align: top;
+  margin: 0 10px 10px 0;
+}
+
+.ember-power-select {
+  display: block;
+  width: 100%;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+select {
+  height: 34px;
+}
+
+input[disabled],
+textarea[disabled] {
+  color: #999 !important;
+  border-color: #ccc;
+}
+
+button,
+input[type='submit'] {
+  @extend .colour-btn-green;
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+  margin: 0 5px 0 0;
+}
+
+[class*='element-wrap'],
+[class*='element-group-wrap'] {
+  margin: 0 0 $elementSpacingBottom 0;
+}
+
+.element-wrap,
+.element-wrap-group {
+  display: block;
+  width: 100%;
+}
+
+.element-group-wrap-block {
+
+  .element-wrap {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    line-height: 1.4;
+  }
+
+  label {
+    margin-bottom: 0;
+  }
+
+}
+
+.element-group-label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  color: #000;
+}
+
+.element-group-wrap label,
+.element-group-wrap input,
+.element-group-wrap-block label,
+.element-group-wrap-block input {
+  @extend .primary-font;
+  font-size: 1.6rem;
+  line-height: 1;
+  display: inline-block;
+  color: #515151;
+}
+
+.element-group-wrap {
+  .element-wrap {
+    display: inline-block;
+    width: auto;
+    margin-right: 15px;
+    margin-bottom: 0;
+
+    &.inline-date-picker {
+      width: 130px;
+    }
+  }
+
+  &.halves .element-wrap {
+    width: 49%;
+    margin-right: 0;
+    padding-right: 10px;
+  }
+
+  &.thirds .element-wrap {
+    width: 32%;
+    margin-right: 0;
+    padding-right: 10px;
+  }
+}
+
+.error {
+  display: block;
+  color: $red;
+  font-size: 1.2rem;
+  line-height: 1;
+  margin-top: 10px;
+}
+
+.input-feedback-message {
+  @extend .primary-font-bold;
+  font-size: 1.2rem;
+  line-height: 1;
+  vertical-align: middle;
+  color: #999;
+  margin-top: -15px;
+  margin-bottom: 25px;
+
+  i {
+    margin-right: 7px;
+  }
+}
+
+.input-group-panel {
+  padding: 15px;
+  background: $grey-light;
+  margin-bottom: 10px;
+  border-radius: 3px;
+
+  .element-wrap {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .additional-label-text {
+    font-size: 1.2rem;
+    display: inline-block;
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+
+  .inline-element-wrap {
+    display: inline-block;
+    width: auto;
+    margin-right: 20px;
+
+    label {
+      display: inline-block;
+      margin-right: 15px;
+    }
+
+    &:first-of-type label:first-of-type {
+      min-width: 150px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="color"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="time"],
+    input[type="url"],
+    textarea,
+    select,
+    .ember-power-select {
+      display: inline-block;
+      width: auto;
+    }
+
+    .ember-power-select {
+      min-width: 150px;
+    }
+  }
+
+}
+
+
+/*doc
+---
+title: Inline Labels
+name: inline-labels
+category: Forms
+---
+
+## Displaying labels inline
+Checkboxes and radios will display labels inline by default (see group elements
+explanation below) but you'll need to add an `.inline-label` class to the element
+wrapper for other input types (such as text, email, selects etc.)
+
+You can use the helper classes `.narrow-label` and `.wide-label` on the element
+wrapper to adjust the widths of the label/input. If the widths still don't suit
+after trying these helpers then you can either adjust the widths set below or
+target the elements directly via custom styles.
+
+`.align-right` helper can be used directly on the label element to align label
+text right.
+
+```html_example
+<h3>Normal inline label (widths: 17%/83% split)</h3>
+<div class="element-wrap inline-label">
+  <label for="input-2">Normal width label<span class="text-red">*</span></label>
+  <input type="email" id="input-2" placeholder="Placeholder text..." />
+</div>
+<br/>
+<h3>Narrow inline label (widths: 10%/90% split)</h3>
+<div class="element-wrap inline-label narrow-label">
+  <label for="input-2">Short label<span class="text-red">*</span></label>
+  <input type="email" id="input-2" placeholder="Placeholder text..." />
+</div>
+<br/>
+<h3>Wide inline label (widths: 25%/75% split)</h3>
+<div class="element-wrap inline-label wide-label">
+  <label for="input-2">Long label that needs space <span class="text-red">*</span></label>
+  <input type="email" id="input-2" placeholder="Placeholder text..." />
+</div>
+<br/>
+<h3>Alignment class helper used on label to align right</h3>
+<div class="element-wrap inline-label">
+  <label for="input-2" class="align-right">Right aligned <span class="text-red">*</span></label>
+  <input type="email" id="input-2" placeholder="Placeholder text..." />
+</div>
+```
+
+*/
+
+@media screen and (min-width: 768px) {
+
+  .inline-label {
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="color"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="time"],
+    input[type="url"],
+    textarea,
+    select,
+    .ember-power-select {
+      display: inline-block;
+      width: calc(83% - 15px);
+      margin-right: 0;
+    }
+
+    label {
+      display: inline-block;
+      width: 17%;
+      margin-right: 10px;
+    }
+
+    &.narrow-label {
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      input[type="number"],
+      input[type="color"],
+      input[type="date"],
+      input[type="datetime"],
+      input[type="search"],
+      input[type="tel"],
+      input[type="time"],
+      input[type="url"],
+      textarea,
+      select,
+      .ember-power-select {
+        width: calc(90% - 15px);
+      }
+
+      label {
+        width: 10%;
+      }
+
+    }
+
+    &.wide-label {
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      input[type="number"],
+      input[type="color"],
+      input[type="date"],
+      input[type="datetime"],
+      input[type="search"],
+      input[type="tel"],
+      input[type="time"],
+      input[type="url"],
+      textarea,
+      select,
+      .ember-power-select {
+        width: calc(75% - 15px);
+      }
+
+      label {
+        width: 25%;
+      }
+
+    }
+
+  }
+
+}
+
+
+/*doc
+---
+title: Button style checkboxes
+name: button-style-checkboxes
+category: Forms
+---
+
+*/
+
+.use-button-style {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  vertical-align: top;
+  position: relative;
+  border: 1px solid $grey;
+  border-radius: 4px;
+  overflow: hidden;
+  -webkit-transition: border 400ms ease;
+  transition: border 400ms ease;
+
+  &.checked,
+  &.checked label,
+  &.checked textarea {
+    border-color: $blue;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    margin-top: -6px;
+    cursor: pointer;
+  }
+
+  .faux-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 32px;
+    height: 100%;
+    text-align: center;
+    cursor: pointer;
+
+    i {
+      font-size: 1.2rem;
+      display: block;
+      margin-top: 18px;
+    }
+  }
+
+  label,
+  .custom-condition {
+    @extend .primary-font;
+    width: 100%;
+    margin: 0;
+    padding: 8px 15px;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    cursor: pointer;
+    border: none;
+    vertical-align: top;
+    border-left: 32px solid $grey;
+    -webkit-transition: all 400ms ease;
+    transition: all 400ms ease;
+    background: #fff;
+  }
+
+  .custom-condition {
+    cursor: auto;
+  }
+}
+
+.custom-conditions-wrap {
+  padding-top: 20px;
+}
+
+.company-selector,
+.contact-selector,
+.project-select {
+  width: 100%;
+  overflow: hidden;
+
+  .ember-power-select {
+    width: 75%;
+    float: left;
+  }
+
+  .ember-power-select-trigger {
+    height: 31px;
+    line-height: 31px !important;
+    line-height: 1;
+    padding: 0 7px;
+  }
+
+}
+
+/*
+  Power Select
+*/
+
+.ember-power-select-trigger {
+  background: #fff;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  height: 34px;
+  line-height: 34px !important;
+  border: 1px solid #777;
+  border-radius: 4px;
+  margin: 0;
+  padding: 3px 10px;
+  font-size: 1.6rem;
+  color: #000;
+  text-overflow: ellipsis;
+}
+
+.ember-power-select-dropdown {
+  z-index: 10000;
+}
+
+/*
+  Button style radio input group-label
+*/
+
+.heading-block .button-style-radios {
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 768px) {
+
+  .heading-block .button-style-radios {
+    width: 100%;
+    clear: both;
+    margin-top: 5px;
+
+    label {
+      font-size: 1.2rem;
+      line-height: 17px;
+      vertical-align: top;
+      margin: 0;
+    }
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+
+  .heading-block .button-style-radios {
+
+    .button-style-radio {
+      margin-left: 1px;
+
+      label {
+        color: #707070;
+        background: #ededed;
+      }
+    }
+
+  }
+
+  .button-style-radios {
+
+    .inline-group-label {
+      float: left;
+      min-width: 150px;
+      margin-right: 20px;
+      line-height: 30px;
+    }
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .button-style-radio {
+      position: relative;
+      float: left;
+      margin-right: 0;
+
+      input[type="radio"] {
+        opacity: 0;
+        position: absolute;
+        pointer-events: none;
+      }
+
+      label {
+        font-family: 'fira_sanssemibold';
+        background: #fff;
+        font-size: 1.4rem;
+        line-height: 1;
+        padding: 8px 20px;
+        cursor: pointer;
+        margin-bottom: 0;
+        border-left: 1px solid $grey-light;
+        -webkit-transition: background-color 250ms ease;
+        transition: background-color 250ms ease;
+      }
+
+      &:first-of-type label {
+        border-radius: 5px 0 0 5px;
+        border-left: none;
+      }
+
+      &:last-of-type label {
+        border-radius: 0 5px 5px 0;
+      }
+
+      &:hover label {
+        background: lighten($blue, 50%);
+      }
+
+      &.is-checked label {
+        background: $blue;
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+  .button-style-radios .button-style-radio label {
+    padding: 8px 10px;
+  }
+
+}

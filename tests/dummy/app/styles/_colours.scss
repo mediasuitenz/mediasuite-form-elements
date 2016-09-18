@@ -1,0 +1,276 @@
+/*doc
+---
+title: Colour Variables
+name: colour-variables
+category: Colours
+---
+
+The following sass variables can be used throughout stylesheets:
+
+| Variable | Hex Value | Swatch |
+|---------------------|---------------------|:---------------:|
+| `$teal` | `#325469` | <div class="bg-teal" style="display: inline-block;height: 30px;width: 60px;"></div> |
+| `$blue-light` | `#3386ba` | <div class="bg-blue-light" style="display: inline-block;height: 30px;width: 60px;"></div> |
+| `$blue` | `#3386ba` | <div class="bg-blue" style="display: inline-block;height: 30px;width: 60px;"></div> |
+| `$blue-dark` | `#235b7e` | <div class="bg-blue-dark" style="display: inline-block;height: 30px;width: 60px;"></div> |
+| `$orange-light` | `#ff7800` | <div class="bg-orange-light" style="display: inline-block;height: 30px;width: 60px;"></div> |
+| `$orange` | `#ff7800` | <div class="bg-orange" style="display: inline-block;height: 30px;width: 60px;"></div> |
+| `$orange-dark` | `#b35400` | <div class="bg-orange-dark" style="display: inline-block;height: 30px;width: 60px;"></div> |
+| `$green-light` | `#84a83a` | <div class="bg-green-light" style="display: inline-block;height: 30px;width: 60px;"></div> |
+| `$green` | `#84a83a` | <div class="bg-green" style="display: inline-block;height: 30px;width: 60px;"></div> |
+| `$green-dark` | `#576f26` | <div class="bg-green-dark" style="display: inline-block;height: 30px;width: 60px;"></div> |
+| `$red-light` | `#ff0000` | <div class="bg-red-light" style="display: inline-block;height: 30px;width: 60px;"></div> |
+| `$red` | `#ff0000` | <div class="bg-red" style="display: inline-block;height: 30px;width: 60px;"></div> |
+| `$red-dark` | `#b30000` | <div class="bg-red-dark" style="display: inline-block;height: 30px;width: 60px;"></div> |
+| `$grey-extra-dark` | `#666666` | <div class="bg-grey-extra-dark" style="display: inline-block;height: 30px;width: 60px;"></div> |
+| `$grey-dark` | `#959595` | <div class="bg-grey-dark" style="display: inline-block;height: 30px;width: 60px;"></div> |
+| `$grey` | `#d4d4d4` | <div class="bg-grey" style="display: inline-block;height: 30px;width: 60px;"></div> |
+| `$grey-light` | `#eff2f3` | <div class="bg-grey-light" style="display: inline-block;height: 30px;width: 60px;"></div> |
+| `$black` | `#3f3f3f` | <div class="bg-black" style="background: #3f3f3f;display: inline-block;height: 30px;width: 60px;"></div> |
+*/
+
+$black: #3f3f3f;
+
+$grey-extra-dark: #666;
+$grey-dark: #959595;
+$grey: #d4d4d4;
+$grey-light: #eff2f3;
+
+$blue-grey: #9aa6aa;
+
+$teal: #325469;
+
+$blue: #3386ba;
+$blue-light: lighten( $blue, 10% );
+$blue-dark: darken( $blue, 15% );
+
+$orange: #ff7800;
+$orange-light: lighten( $orange, 10% );
+$orange-dark: darken( $orange, 15% );
+
+$green: #84a83a;
+$green-light: lighten( $green, 5% );
+$green-dark: darken( $green, 15% );
+
+$red: #ff0000;
+$red-light: lighten( $red, 10% );
+$red-dark: darken( $red, 15% );
+
+$yellow: #f8f100;
+
+/*doc
+---
+title: Background Colours
+name: background-colours
+category: Colours
+---
+
+These classes can be used to apply background colour to elements.
+
+```html_example
+<div class="bg-teal"><br/></div>
+<div class="bg-blue-light"><br/></div>
+<div class="bg-blue"><br/></div>
+<div class="bg-blue-dark"><br/></div>
+<div class="bg-orange-light"><br/></div>
+<div class="bg-orange"><br/></div>
+<div class="bg-orange-dark"><br/></div>
+<div class="bg-green-light"><br/></div>
+<div class="bg-green"><br/></div>
+<div class="bg-green-dark"><br/></div>
+<div class="bg-red-light"><br/></div>
+<div class="bg-red"><br/></div>
+<div class="bg-red-dark"><br/></div>
+<div class="bg-grey-dark"><br/></div>
+<div class="bg-grey"><br/></div>
+<div class="bg-grey-light"><br/></div>
+<div class="bg-black"><br/></div>
+<div class="bg-white"><br/></div>
+```
+*/
+
+.bg-teal {
+  background-color: $teal;
+}
+
+.bg-blue-light {
+  background-color: $blue-light;
+}
+
+.bg-blue {
+  background-color: $blue;
+}
+
+.bg-blue-dark {
+  background-color: $blue-dark;
+}
+
+.bg-orange-light {
+  background-color: $orange-light;
+}
+
+.bg-orange {
+  background-color: $orange;
+}
+
+.bg-orange-dark {
+  background-color: $orange-dark;
+}
+
+.bg-green-light {
+  background-color: $green-light;
+}
+
+.bg-green {
+  background-color: $green;
+}
+
+.bg-green-dark {
+  background-color: $green-dark;
+}
+
+.bg-red-light {
+  background-color: $red-light;
+}
+
+.bg-red {
+  background-color: $red;
+}
+
+.bg-red-dark {
+  background-color: $red-dark;
+}
+
+.bg-yellow {
+  background-color: $yellow;
+}
+
+.bg-grey-extra-dark {
+  background-color: $grey-extra-dark;
+}
+
+.bg-grey-dark {
+  background-color: $grey-dark;
+}
+
+.bg-grey {
+  background-color: $grey;
+}
+
+.bg-grey-light {
+  background-color: $grey-light;
+}
+
+.bg-black {
+  background-color: $black;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+
+/*doc
+---
+title: Text Colours
+name: text-colours
+category: Colours
+---
+
+These classes can be used to apply text colours to elements.
+
+```html_example
+<div class="text-teal"><p>Lorem Ipsum Dolor Sit Amet</p></div>
+<div class="text-blue-light"><p>Lorem Ipsum Dolor Sit Amet</p></div>
+<div class="text-blue"><p>Lorem Ipsum Dolor Sit Amet</p></div>
+<div class="text-blue-dark"><p>Lorem Ipsum Dolor Sit Amet</p></div>
+<div class="text-orange-light"><p>Lorem Ipsum Dolor Sit Amet</p></div>
+<div class="text-orange"><p>Lorem Ipsum Dolor Sit Amet</p></div>
+<div class="text-orange-dark"><p>Lorem Ipsum Dolor Sit Amet</p></div>
+<div class="text-green-light"><p>Lorem Ipsum Dolor Sit Amet</p></div>
+<div class="text-green"><p>Lorem Ipsum Dolor Sit Amet</p></div>
+<div class="text-green-dark"><p>Lorem Ipsum Dolor Sit Amet</p></div>
+<div class="text-red-light"><p>Lorem Ipsum Dolor Sit Amet</p></div>
+<div class="text-red"><p>Lorem Ipsum Dolor Sit Amet</p></div>
+<div class="text-red-dark"><p>Lorem Ipsum Dolor Sit Amet</p></div>
+<div class="text-grey-dark"><p>Lorem Ipsum Dolor Sit Amet</p></div>
+<div class="text-grey"><p>Lorem Ipsum Dolor Sit Amet</p></div>
+<div class="text-black"><p>Lorem Ipsum Dolor Sit Amet</p></div>
+<div class="text-white"><p>Lorem Ipsum Dolor Sit Amet</p></div>
+```
+*/
+
+.text-teal {
+  color: $teal;
+}
+
+.text-blue,
+.link-style.text-blue {
+  color: $blue;
+}
+
+.link-style.text-blue:hover {
+  color: darken($blue, 5%);
+}
+
+.text-blue-dark {
+  color: $blue-dark;
+}
+
+.text-orange {
+  color: $orange;
+}
+
+.text-orange-dark {
+  color: $orange-dark;
+}
+
+.text-green,
+.link-style.text-green {
+  color: $green;
+}
+
+.link-style.text-green:hover {
+  color: darken($green, 5%);
+}
+
+.text-green-dark {
+  color: $green-dark;
+}
+
+.text-red,
+.link-style.text-red {
+  color: $red;
+}
+
+.link-style.text-red:hover {
+  color: darken($red, 5%);
+}
+
+.text-red-dark {
+  color: $red-dark;
+}
+
+.text-grey-extra-dark {
+  color: $grey-extra-dark;
+}
+
+.text-grey-dark {
+  color: $grey-dark;
+}
+
+.text-grey {
+  color: $grey;
+}
+
+.text-black {
+  color: $black;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-white-opaque {
+  color: rgba(255,255,255,.5);
+}

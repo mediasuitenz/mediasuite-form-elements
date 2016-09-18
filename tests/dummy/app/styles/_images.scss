@@ -1,0 +1,43 @@
+/*doc
+---
+title: Responsive Image Wrapper
+name: image-wrapper
+category: Images
+---
+
+Sizes maximum width of image to be 100% of it's containing element (`.image-wrapper`). Set a max-width on `.image-wrapper` element to prevent it going full-width (can be useful for preventing image from being displayed at a size larger than it's natural dimensions).
+
+```html_example
+<a href="#" class="image-wrap margin-btm-30">
+  <img src="images/map.png" alt="" />
+</a>
+
+<div class="image-wrap" style="max-width: 267px;">
+  <img src="images/map.png" alt="" />
+</div>
+```
+*/
+
+.image-wrap {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.layout-thumb {
+  display: block;
+  text-align: right;
+
+  img {
+    display: inline-block;
+    height: 175px;
+    width: auto;
+  }
+}

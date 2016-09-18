@@ -1,0 +1,505 @@
+/*doc
+---
+title: Fonts
+name: fonts
+category: Typography
+---
+
+#### Fira Sans (primary font)
+
+```html_example
+<p class="primary-font">Lorem ipsum dolor sit amet</p>
+<p class="primary-font-italic">Lorem ipsum dolor sit amet</p>
+<p class="primary-font-bold">Lorem ipsum dolor sit amet</p>
+<p class="primary-font-bold-italic">Lorem ipsum dolor sit amet</p>
+```
+
+*/
+
+@font-face {
+  font-family: 'fira_sansbook';
+  src: url('fonts/firasans-book-webfont.eot');
+  src: url('fonts/firasans-book-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/firasans-book-webfont.woff2') format('woff2'),
+       url('fonts/firasans-book-webfont.woff') format('woff'),
+       url('fonts/firasans-book-webfont.ttf') format('truetype'),
+       url('fonts/firasans-book-webfont.svg#fira_sansbook') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'fira_sansbook_italic';
+  src: url('fonts/firasans-bookitalic-webfont.eot');
+  src: url('fonts/firasans-bookitalic-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/firasans-bookitalic-webfont.woff2') format('woff2'),
+       url('fonts/firasans-bookitalic-webfont.woff') format('woff'),
+       url('fonts/firasans-bookitalic-webfont.ttf') format('truetype'),
+       url('fonts/firasans-bookitalic-webfont.svg#fira_sansbook_italic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'fira_sanssemibold';
+  src: url('fonts/firasans-semibold-webfont.eot');
+  src: url('fonts/firasans-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/firasans-semibold-webfont.woff2') format('woff2'),
+       url('fonts/firasans-semibold-webfont.woff') format('woff'),
+       url('fonts/firasans-semibold-webfont.ttf') format('truetype'),
+       url('fonts/firasans-semibold-webfont.svg#fira_sanssemibold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'fira_sanssemibold_italic';
+  src: url('fonts/firasans-semibolditalic-webfont.eot');
+  src: url('fonts/firasans-semibolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/firasans-semibolditalic-webfont.woff2') format('woff2'),
+       url('fonts/firasans-semibolditalic-webfont.woff') format('woff'),
+       url('fonts/firasans-semibolditalic-webfont.ttf') format('truetype'),
+       url('fonts/firasans-semibolditalic-webfont.svg#fira_sanssemibold_italic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.primary-font {
+  font-family: 'fira_sansbook', sans-serif;
+}
+
+.primary-font-italic {
+  font-family: 'fira_sansbook_italic', sans-serif;
+}
+
+.primary-font-bold,
+.bold,
+strong,
+b {
+  font-family: 'fira_sanssemibold', sans-serif;
+  font-weight: bolder;
+}
+
+.primary-font-bold-italic {
+  font-family: 'fira_sanssemibold_italic', sans-serif;
+}
+
+body {
+  @extend .primary-font;
+  color: $black;
+}
+
+/*doc
+---
+title: Font Sizing
+name: font-sizing
+category: Typography
+---
+
+Fonts are sized using [REMs](http://snook.ca/archives/html_and_css/font-size-with-rem). Root font size is set to 10px (1rem) and all other elements are sized relative to that (so 1.2rem == 12px, 2.4rem == 24px etc).
+
+Default body font size is 14px (1.4rem).
+
+#### Font sizing helper classes:
+
+```html_example
+<p class="text-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="text-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="text-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="text-16">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="text-18">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p class="text-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+```
+*/
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.4rem;
+  line-height: 1.3;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+.text-10 {
+  font-size: 1rem;
+}
+
+.text-12 {
+  font-size: 1.2rem;
+}
+
+.text-14 {
+  font-size: 1.4rem;
+}
+
+.text-16 {
+  font-size: 1.5rem;
+}
+
+.text-18 {
+  font-size: 1.8rem;
+}
+
+.text-20 {
+  font-size: 2rem;
+}
+
+.text-22 {
+  font-size: 2.2rem;
+}
+
+.text-24 {
+  font-size: 2.4rem;
+}
+
+/*doc
+---
+title: Headings
+name: headings
+category: Typography
+---
+
+```html_example
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+```
+*/
+
+h1 {
+  @extend .primary-font-bold;
+  font-size: 2.2rem;
+  line-height: 1.2;
+}
+
+h2 {
+  @extend .primary-font-bold;
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+
+h3 {
+  @extend .primary-font-bold;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+h4, h5, h6 {
+  @extend .primary-font-bold;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+/*doc
+---
+title: Links
+name: links
+category: Typography
+---
+
+Links in heading tags will inherit colour from the heading (overriding default style).
+
+Default links are green, underline on hover.
+
+```html_example
+<h2 class="text-green"><a href="#">Link Inside Heading</a></h2>
+<a href="#">Default Link Style</a>
+```
+*/
+
+a {
+  color: $blue;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+  text-decoration: none;
+}
+
+/*doc
+---
+title: Lists
+name: lists
+category: Typography
+---
+
+#### No list style
+```html_example
+<ul class="no-list-style">
+  <li>Item one</li>
+  <li>Item two</li>
+  <li>Item three</li>
+</ul>
+```
+#### Navigation style
+```html_example
+<ul class="nav-style">
+  <li><a href="#" class="nav-item">Item one</a></li>
+  <li><a href="#" class="nav-item">Item two</a></li>
+  <li><a href="#" class="nav-item">Item three</a></li>
+</ul>
+```
+*/
+
+ul,
+ol {
+  padding-left: 23px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.no-list-style,
+.no-list-style ul,
+.nav-style,
+.nav-style ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.list-with-deletable-items li {
+  margin-bottom: 10px;
+}
+
+.deletable-item-text {
+  @extend .primary-font-bold;
+  vertical-align: middle;
+  font-size: 1.8rem;
+  margin-left: 10px;
+}
+
+.nav-style li {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+
+.nav-item {
+  display: block;
+  padding: 5px 15px;
+  text-decoration: none;
+}
+
+.nav-item:hover {
+  text-decoration: none;
+}
+
+dl:after {
+  content: '';
+  display: table;
+  clear: both;
+  line-height: 1.5;
+}
+
+dt {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 15px;
+}
+
+dd {
+  display: inline-block;
+  vertical-align: top;
+
+  p {
+    margin-bottom: 5px;
+  }
+}
+
+dl.list-1-2-1-2 {
+
+  dt,
+  dd {
+    float: left;
+    width: 50%;
+    padding-right: 10px;
+    margin: 0 0 10px 0;
+  }
+
+  dt {
+    clear: left;
+    font-weight: 400;
+  }
+
+  dd {
+    font-weight: bold;
+  }
+
+}
+
+dl.list-1-3-2-3 {
+
+  dt,
+  dd {
+    float: left;
+    padding-right: 10px;
+    margin: 0 0 10px 0;
+  }
+
+  dt {
+    width: 33%;
+    clear: left;
+    font-weight: 400;
+  }
+
+  dd {
+    width: 66.5%;
+    font-weight: bold;
+  }
+
+}
+
+.info-list {
+
+  dt {
+    @extend .primary-font-bold;
+    font-size: 1.6rem;
+    line-height: 31px;
+    width: 25%;
+    margin-bottom: 5px;
+  }
+
+  dd {
+    font-size: 1.4rem;
+    line-height: 31px;
+    width: calc(75% - 20px);
+    margin-bottom: 5px;
+  }
+
+}
+
+/*doc
+---
+title: Helper Classes
+name: type-helpers
+category: Typography
+---
+
+#### Lowercase
+```html_example
+<p class="lowercase">LOREM IPSUM DOLOR SIT AMET.</p>
+```
+
+#### Uppercase
+```html_example
+<p class="uppercase">lorem ipsum dolor sit amet.</p>
+```
+
+#### Align Left
+```html_example
+<p class="align-left">Lorem ipsum dolor sit amet.</p>
+```
+
+#### Align Centre
+```html_example
+<p class="align-center">Lorem ipsum dolor sit amet.</p>
+```
+
+#### Align Right
+```html_example
+<p class="align-right">Lorem ipsum dolor sit amet.</p>
+```
+
+#### Italic
+```html_example
+<p class="italic">Lorem ipsum dolor sit amet.</p>
+```
+
+#### Button line-height helper:
+Matches text line-height to button height (makes text look vertically centered next to button).
+
+```html_example
+<div class="clearfix">
+  <div class="float-left align-center half">
+    <a href="#" class="colour-btn-orange"><i class="fa fa-download"></i> Download</a>
+  </div>
+  <a href="#" class="float-right half align-center match-btn-height">More Details</a>
+</div>
+```
+
+#### Text overflow helper
+If text is wider than max-width specified, an ellipsis will be added to the end.
+Used to avoid breaking layouts where length of user input content is unknown.
+
+```html_example
+<div class="text-max-170">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+<div class="text-max-240">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+```
+
+*/
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.match-btn-height {
+  line-height: 36px;
+}
+
+.match-small-button-height {
+  line-height: 31px;
+}
+
+.text-block-output {
+  line-height: 1.5;
+}
+
+.text-max-170,
+.text-max-240 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.text-max-170 {
+  max-width: 170px;
+}
+
+.text-max-240 {
+  max-width: 240px;
+}

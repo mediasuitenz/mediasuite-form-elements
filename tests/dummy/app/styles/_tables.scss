@@ -1,0 +1,525 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+th {
+  text-align: left;
+  padding: 12px 6px;
+  border-bottom: 2px solid $green;
+  font-weight: bold;
+  white-space: nowrap;
+
+  &.sortable-column-heading {
+    position: relative;
+    padding-left: 0;
+    padding-right: 20px;
+    cursor: pointer;
+
+    &:before {
+      display: inline-block;
+      font-family: 'fontello';
+      font-size: 1.6rem;
+      vertical-align: middle;
+      width: 18px;
+      height: 18px;
+      line-height: 18px;
+      text-align: center;
+      background: #eee;
+      color: #bbb;
+      margin-right: 6px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: all 250ms ease;
+    }
+
+    &.descending:before {
+      content: '\e804';
+    }
+
+    &.ascending:before {
+      content: '\e807';
+    }
+
+    &.sortable-column-heading:hover:before,
+    &.sortable-column-heading.selected:before {
+      background: $green;
+      color: #fff;
+    }
+  }
+}
+
+.no-colour-borders th {
+  border-bottom: none;
+}
+
+td {
+  padding: 12px 6px;
+  border-bottom: 1px solid $grey-light;
+  vertical-align: top;
+  transition: background 200ms ease;
+}
+
+tr:hover td {
+  background-color: $grey-light;
+}
+
+.totals-row td {
+  font-size: 1.6rem;
+  border-bottom: 3px double $grey;
+}
+
+.no-hover-effect tr:hover td {
+  background: none;
+}
+
+table a {
+  @extend .primary-font;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: $green;
+}
+
+table [class*='colour-btn-'] {
+  color: #fff;
+  margin: 0;
+}
+
+.tmp-id-column {
+  padding-left: 10px;
+}
+
+.links-column {
+  text-align: right;
+  white-space: nowrap;
+
+  a,
+  button {
+    margin-left: 10px;
+  }
+}
+
+table.orange {
+
+  a,
+  .link-style {
+    color: $orange;
+  }
+
+  [class*='colour-btn-'] {
+    color: #fff;
+    margin: 0;
+  }
+
+  th {
+    border-color: $orange;
+
+    &.sortable-column-heading:hover:before,
+    &.sortable-column-heading.selected:before {
+      background: $orange;
+      color: #fff;
+    }
+  }
+
+}
+
+table.blue {
+
+  a,
+  .link-style {
+    color: $blue;
+  }
+
+  [class*='colour-btn-'] {
+    color: #fff;
+    margin: 0;
+  }
+
+  th {
+    border-color: $blue;
+
+    &.sortable-column-heading:hover:before,
+    &.sortable-column-heading.selected:before {
+      background: $blue;
+      color: #fff;
+    }
+  }
+
+}
+
+.revision-btns {
+  display: inline-block;
+}
+
+.worksite-submitted {
+  white-space: nowrap;
+}
+
+.scroll-table-horizontally {
+  width: 100%;
+  overflow-x: auto;
+
+  td {
+    white-space: nowrap;
+  }
+}
+
+// Tables used for listing worksites, TMPs etc.
+.item-list-table td {
+
+  button,
+  [class*='colour-btn'],
+  .small-btn {
+    padding: 7px 17px;
+  }
+
+  .link-style,
+  .link-style:active,
+  .link-style:focus,
+  .link-style:hover {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    padding: 0;
+  }
+
+}
+
+// View documenation table on worksite
+.doc-type-col {
+  @extend .primary-font-bold;
+}
+
+.doc-files-col .file-item {
+  text-align: center;
+  margin: 0 0 5px 0;
+  display: block;
+
+  .file-name {
+    font-size: 1.1rem;
+  }
+
+  .file-size {
+    display: none;
+  }
+
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.has-double-rows td {
+  border-bottom: none;
+  border-top: 1px solid $grey-light;
+}
+
+.has-double-rows .double-row-btm td {
+  border-top: none;
+  padding-top: 0;
+}
+
+.table-big-text {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.table-align-middle td {
+  vertical-align: middle;
+}
+
+.filter-table {
+
+  td {
+    font-size: 1.4rem;
+    line-height: 34px;
+    padding: 8px 0;
+    border-top: 1px solid #ddd;
+    border-bottom: none;
+  }
+
+  .icon-col {
+    width: 65px;
+  }
+
+  .filter-name {
+    @extend .primary-font-bold;
+    min-width: 200px;
+  }
+
+  .element-wrap {
+    display: inline-block;
+    margin: 0 0 0 25px;
+    width: auto;
+
+    label {
+      display: inline-block;
+      text-align: right;
+      margin-right: 10px
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="color"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="time"],
+    input[type="url"],
+    textarea,
+    select,
+    .ember-power-select {
+      display: inline-block;
+      width: auto;
+    }
+
+    select,
+    .ember-power-select {
+      min-width: 200px;
+    }
+  }
+}
+
+.table-with-inputs {
+
+  td {
+    line-height: 25px;
+  }
+
+  .element-wrap {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    margin: 0;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="color"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="url"],
+  textarea,
+  select {
+    display: inline-block;
+    vertical-align: top;
+    width: auto;
+    font-size: 1.4rem;
+    padding: 2px 5px;
+    color: #333;
+
+    &.extra-long-text-field {
+      width: 100%;
+      min-width: 450px;
+    }
+
+    &.extra-short-text-field {
+      width: 60px;
+    }
+  }
+
+  .ember-power-select {
+    display: inline-block;
+    vertical-align: top;
+    width: auto;
+    font-size: 1.4rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  .ember-power-select-trigger {
+    height: auto;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    padding: 2px 20px 2px 5px;
+    color: #333;
+    min-width: 120px;
+  }
+
+}
+
+// Responsivify table on mobile devices:
+@media screen and (max-width: 767px) {
+
+  .responsivify-table {
+
+    thead {
+      display: none;
+    }
+
+    tr {
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    td {
+      display: block;
+      font-size: 1.2rem;
+      padding: 10px 10px 10px 90px;
+      min-height: 37px;
+      position: relative;
+    }
+
+    tr td:first-child {
+      font-family: 'fira_sanssemibold', sans-serif;
+      background: $grey-light;
+      font-size: 1.4rem;
+      padding-left: 10px;
+    }
+
+    td.tmp-id-column {
+      padding-left: 90px !important;
+    }
+
+    td:before {
+      content: attr(data-th);
+      display: block;
+      width: 80px;
+      font-family: 'fira_sanssemibold', sans-serif;
+      margin-right: 10px;
+      position: absolute;
+      left: 10px;
+      top: 10px;
+    }
+
+    .links-column {
+      text-align: right;
+      padding: 10px;
+      border: none;
+    }
+
+  }
+
+  table.orange {
+    [class*='colour-btn-'] {
+      padding: 7px 5px;
+      display: block;
+      margin-bottom: 7px;
+      text-align: center;
+    }
+
+    .links-column {
+      min-width: 75px;
+    }
+  }
+
+  td {
+    vertical-align: top;
+  }
+
+  .revision-btns {
+    max-width: 150px;
+  }
+
+  .doc-files-col {
+    display: none;
+  }
+
+  .scroll-on-mobile {
+    overflow-x: scroll;
+  }
+
+  .filter-table {
+    display: block;
+    width: 100%;
+
+    tbody,
+    tr,
+    td {
+      display: block;
+      width: 100%;
+    }
+
+    tr {
+      position: relative;
+      border-bottom: 1px solid #ddd;
+    }
+
+    td {
+      border-top: none;
+      border-bottom: none;
+    }
+
+    .icon-col {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .filter-name {
+      padding-left: 35px;
+    }
+
+    .element-wrap {
+      display: block;
+      margin: 0 0 10px 0;
+      width: 100%;
+
+      label {
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+        text-align: left;
+      }
+
+      select {
+        width: 100%;
+        min-width: 0;
+      }
+    }
+
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+
+  .revision-first-col {
+    width: 150px;
+  }
+
+  .revision-btns {
+    min-width: 190px;
+  }
+
+  .doc-type-col {
+    width: 200px;
+  }
+
+  .doc-files-col {
+    width: 250px;
+    text-align: right;
+    padding: 10px 0 6px 20px;
+  }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+  .filter-table .element-wrap {
+    margin-bottom: 5px;
+  }
+
+  .filter-table .element-wrap label {
+    min-width: 40px;
+    text-align: left;
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+  .doc-files-col {
+    width: 300px;
+  }
+
+}

@@ -1,0 +1,79 @@
+<h1>Input</h1>
+<br><br>
+<p>Wraps the <a href="https://github.com/DockYard/ember-one-way-controls/blob/master/docs/one-way-input.md">ember-one-way-input</a></p>
+<p>
+  <table>
+    <tr>
+      <th>Paramater</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+    <tr><td>value</td><td>string</td><td>The value of the input (even 'number' type returns a string)</td></tr>
+    <tr><td>label</td><td>string</td><td>Label</td></tr>
+    <tr><td>type</td> <td>string ('text' default)</td><td>The type of the input (html5 values apply)</td></tr>
+    <tr><td>required</td> <td>true, false(default)</td><td>Indicates whether this is a required field - adds an '*' to the UI and marks the input element as 'required'</td></tr>
+    <tr><td>disabled</td> <td>true, false(default)</td><td>Indicates whether the field is disabled</td></tr>
+    <tr><td>placeholder</td> <td>string</td><td>Element placeholder text</td></tr>
+    <tr><td>class</td> <td>string</td><td>Element css classes</td></tr>
+    <tr><td>elementId</td> <td>string</td><td>Textarea will be 'input-[id]'</td></tr>
+    <tr><td>errors</td> <td>[object]</td><td>Array of error objects.  Each object must contain a 'message' key to be displayed</td></tr>
+    <tr><td>update</td> <td>function (value(string)</td><td>The function that returns the current value each time it changes</td></tr>
+  </table>
+</p>
+
+<h3>Valid</h3>
+{{mediasuite-input
+  value=model.firstName
+  type='text'
+  label="First Name:"
+  required=true
+  disabled=false
+  placeholder='Example Name'
+  class='skinned-text-area'
+  elementId='first-name'
+  update=(action (mut form.firstName))
+}}
+<p>First name: {{form.firstName}}</p>
+
+<pre>
+&#123;&#123;mediasuite-input
+  value=model.firstName
+  type='text'
+  label="First Name:"
+  required=true
+  disabled=false
+  placeholder='Example Name'
+  class='skinned-text-area'
+  elementId='first-name'
+  update=(action (mut form.firstName))
+&#125;&#125;
+</pre>
+
+<br><br>
+
+<h3>With Errors</h3>
+{{mediasuite-input
+  value=model.lastName
+  type='text'
+  label="Last Name:"
+  errors=model.errors.lastName
+  required=true
+  disabled=false
+  placeholder='Example Name'
+  class='skinned-text-area'
+  update=(action (mut model.lastName))
+}}
+
+<pre>
+&#123;&#123;mediasuite-input
+  value=model.lastName
+  type='text'
+  label="Last Name:"
+  errors=model.errors.lastName
+  required=true
+  disabled=false
+  placeholder='Example Name'
+  class='skinned-text-area'
+  update=(action (mut model.lastName))
+&#125;&#125;
+</pre>

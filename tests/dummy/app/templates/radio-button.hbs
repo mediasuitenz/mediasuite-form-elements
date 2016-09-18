@@ -1,0 +1,63 @@
+<h1>Radio Button</h1>
+<br><br>
+<p>
+  Wraps the Ember <a href="https://github.com/DockYard/ember-one-way-controls/blob/master/docs/one-way-radio.md">One-Way-Radio</a> component.
+</p>
+<p>An individual radio button control, useful if you want to construct your own set of radio buttons because you don't want to modify the structure of the options array to
+  match the requirements of the <b>mediasuite-radio-buttons</b> control.  Needs a little more manual effort, but gives you more control.
+</p>
+<p>
+  <table>
+    <tr>
+      <th>Paramater</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+    <tr><td>label</td><td>string</td><td>Label</td></tr>
+    <tr><td>name</td> <td>string</td><td>You'll need to manually set this to be the same for all radio buttons</td></tr>
+    <tr><td>option</td> <td>[object]/[primitive]</td><td>The value that represents this radio button.  Will be checked when matches the <b>value</b></td></tr>
+    <tr><td>value</td> <td>object/primitive</td><td>The currently selected object/primitive from the options</td></tr>
+    <tr><td>errors</td> <td>[object]</td><td>Array of error objects.  Each object must contain a 'message' key to be displayed.  Note, this is a bit weird on a collection
+      of radio buttons, as you may not want the errors represented for each radio button, but for the whole set.  In which case you'll need to use something like:
+      <pre>
+        &#123;&#123;#each errors as |error|&#125;&#125;
+          &lt;span class="error"&gt;&#123;&#123;error.message&#125;&#125;&lt;/span&gt;
+        &#123;&#123;/each&#125;&#125;
+      </pre>
+    </td></tr>
+    <tr><td>update</td> <td>function (value(object))</td><td>Function called when a radio-button is selected. </td></tr>
+    <tr><td>useButtonStyle</td> <td>true or false(default)</td><td>Renders the radio buttons as actual buttons</td></tr>
+  </table>
+</p>
+
+<h3>Valid Use of multiple</h3>
+{{#each model.options as |gunter|}}
+  <span class="float-left max-1210">
+    {{mediasuite-radio-button
+      name='gunters'
+      label=gunter.label
+      value=model.selected
+      option=gunter
+      disabled=gunter.disabled
+      update=(action (mut model.selected))
+    }}
+  </span>
+{{/each}}
+<p>Selected: <b>{{model.selected.label}}</b></p>
+
+<br>
+<pre>
+&#123;&#123;#each model.options as |gunter|&#125;&#125;
+  &lt;span class="float-left max-1210"&gt;
+    &#123;&#123;mediasuite-radio-button
+      name='gunters'
+      label=gunter.label
+      value=model.selected
+      option=gunter
+      disabled=gunter.disabled
+      update=(action (mut model.selected))
+    &#125;&#125;
+  &lt;/span&gt;
+&#123;&#123;/each&#125;&#125;
+</pre>
+

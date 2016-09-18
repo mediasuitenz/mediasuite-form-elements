@@ -1,0 +1,17 @@
+<h1>Date Picker</h1>
+<br><br>
+<p>
+  There is no Media Suite implementation of a date picker (yet).  Instead the recommended control is
+  <a href="https://github.com/edgycircle/ember-pikaday">Ember Pikaday</a>.
+</p>
+<p>
+  It's not practicle to duplicate all of the param options in another component to simply wrap in some 
+  simple html.  Therefore, it's recommended to use this pattern:
+</p>
+<pre>
+  &lt;label for="worksite-start-date"&gt;From &lt;span class="text-red"&gt;*&lt;/span&gt;&lt;/label&gt;
+  &#123;&#123;pikaday-input value=worksite.startDate id=worksite-start-date maxDate=maxStartDate&#125;&#125;
+  &#123;&#123;#each worksite.errors.startDate as |error|&#125;&#125;
+    &lt;span class="error"&gt;&#123;&#123;error.message&#125;&#125;&lt;/span&gt;
+  &#123;&#123;/each&#125;&#125;
+</pre>

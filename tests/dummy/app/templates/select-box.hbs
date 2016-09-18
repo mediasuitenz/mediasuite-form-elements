@@ -1,0 +1,81 @@
+<h1>Select Box</h1>
+<br><br>
+<p>
+  A wrapper around
+  <a href="https://github.com/DockYard/ember-one-way-controls/blob/master/docs/one-way-select.md">Ember One Way Select</a>.
+</p>
+<p>
+  <b>Note: </b> If you want to have the top item in the list be completely blank, you'll need to drop down to using the Ember One Way Select
+  component directly.  The <b>prompt</b> and <b>includeBlank</b> options cannot be used together when declaring an instance of the component,
+  even if one value is 'undefined'.  This customised implementation has preferred <b>prompt</b> as the more useful option.
+</p>
+<p>
+  <table>
+    <tr>
+      <th>Paramater</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+    <tr><td>options</td><td>[string] or [Object]</td><td>List of options.  Either an array of strings, or array of objects - display text must be on the `name` key, e.g. <code>{id: 1, name: 'Parzival'}</code></td></tr>
+    <tr><td>value</td><td>any primitive</td><td>primitive matching the value of the selected item</td></tr>
+    <tr><td>label</td><td>string</td><td>Label</td></tr>
+    <tr><td>didChange</td><td>closure function (selected(object), component(object))</td><td>Fires when the drop-down value changes</td></tr>
+    <tr><td>prompt</td><td>string</td><td>Option to add placeholder text as the first option</td></tr>
+    <tr><td>optionValuePath</td><td>string</td><td>If your options are objects, this is the path to the value on each option</td></tr>
+    <tr><td>optionLabelPath</td><td>string</td><td>If your options are objects, this is the path to the display text for each option</td></tr>
+    <tr><td>multiple</td><td>boolean (default false)</td><td>Whether you want a multi-select.  The wrapping div will have a 'multiple' class,
+       so the select can be styled specifically</td></tr>
+  </table>
+</p>
+
+<h3>Valid - single values (with didChange function)</h3>
+{{mediasuite-select-box
+  options=model.string.values
+  value=model.string.selected
+  label='Favourite Gunter:'
+  prompt="Please select one:"
+  placeholderOption=false
+  update=(route-action 'didChange')
+}}
+<p>Selected: <b>{{model.string.selected}}</b></p>
+
+<pre>
+&#123;&#123;mediasuite-select-box
+  options=model.string.values
+  value=model.string.selected
+  label='Favourite Gunter:'
+  prompt="Please select one:"
+  placeholderOption=false
+  update=(route-action 'didChange')
+&#125;&#125;
+</pre>
+<br><br>
+<h3>Object multi-select</h3>
+{{mediasuite-select-box
+  options=model.object.values
+  value=model.object.selected
+  multiple=true
+  label='Favourite Gunter:'
+  optionValuePath='id'
+  optionLabelPath='name'
+  placeholderOption=false
+  update=(action (mut model.object.selected))
+}}
+<p>Selected: <b>
+  {{#each model.object.selected as |item|}}
+    {{item.name}}
+  {{/each}}
+  </b></p>
+
+<pre>
+&#123;&#123;mediasuite-select-box
+  options=model.object.values
+  value=model.object.selected
+  multiple=true
+  label='Favourite Gunter:'
+  optionValuePath='id'
+  optionLabelPath='name'
+  placeholderOption=false
+  update=(action (mut model.object.selected))
+&#125;&#125;
+</pre>
