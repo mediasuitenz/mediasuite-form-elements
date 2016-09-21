@@ -1,0 +1,19 @@
+<h1>Power Select</h1>
+<br><br>
+<p>
+  There is no Media Suite implementation of a power select (yet).  You can see all the documenation for installation and use
+  at <a href="http://www.ember-power-select.com/">http://www.ember-power-select.com/</a>
+</p>
+<p>
+  It's not practicle to duplicate all of the param options in another component to simply wrap in some
+  simple html.  Therefore, it's recommended to use this pattern:
+</p>
+<pre>
+  &lt;label&gt;Select name: &lt;span class="text-red"&gt;*&lt;/span&gt;&lt;/label&gt;
+  &#123;&#123;#power-select options=names selected=name onchange=(action (mut name)) as |name|&#125;&#125;
+    &#123;&#123;name&#125;&#125;
+  &#123;&#123;/power-select&#125;&#125;
+  &#123;&#123;#each worksite.errors.name as |error|&#125;&#125;
+    &lt;span class="error"&gt;&#123;&#123;error.message&#125;&#125;&lt;/span&gt;
+  &#123;&#123;/each&#125;&#125;
+</pre>

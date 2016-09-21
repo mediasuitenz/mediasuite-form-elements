@@ -16,6 +16,7 @@ Router.map(function () {
   this.route('date-picker')
   this.route('checkbox')
   this.route('checkboxes')
+  this.route('power-select')
 })
 
 export default Router
