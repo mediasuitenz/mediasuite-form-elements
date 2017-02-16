@@ -26,6 +26,9 @@
     <tr><td>optionLabelPath</td><td>string</td><td>If your options are objects, this is the path to the display text for each option</td></tr>
     <tr><td>multiple</td><td>boolean (default false)</td><td>Whether you want a multi-select.  The wrapping div will have a 'multiple' class,
        so the select can be styled specifically</td></tr>
+    <tr><td>update</td><td>action</td><td>The action you want to happen on change.  Note: if you're using a null/blank prompt the you want to use the next two options</td></tr>
+    <tr><td>mutUpdate</td><td>boolean</td><td>If you simply want to mutate a value on change, and one of those values can be null, set this to true</td></tr>
+    <tr><td>mutField</td><td>object reference</td><td>Reference to the field you want to be updated when the selection is changed</td></tr>
   </table>
 </p>
 
@@ -35,7 +38,6 @@
   value=model.string.selected
   label='Favourite Gunter:'
   prompt="Please select one:"
-  placeholderOption=false
   update=(route-action 'didChange')
 }}
 <p>Selected: <b>{{model.string.selected}}</b></p>
@@ -46,7 +48,6 @@
   value=model.string.selected
   label='Favourite Gunter:'
   prompt="Please select one:"
-  placeholderOption=false
   update=(route-action 'didChange')
 &#125;&#125;
 </pre>
@@ -59,7 +60,6 @@
   label='Favourite Gunter:'
   optionValuePath='id'
   optionLabelPath='name'
-  placeholderOption=false
   update=(action (mut model.object.selected))
 }}
 <p>Selected: <b>
@@ -76,7 +76,6 @@
   label='Favourite Gunter:'
   optionValuePath='id'
   optionLabelPath='name'
-  placeholderOption=false
   update=(action (mut model.object.selected))
 &#125;&#125;
 </pre>

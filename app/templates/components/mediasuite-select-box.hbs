@@ -1,14 +1,29 @@
 <label for={{inputId}}>{{label}} {{#if required}}<span class="text-red">*</span>{{/if}}</label>
-{{one-way-select
-  options=options
-  value=value
-  multiple=multiple
-  id=inputId
-  update=update
-  disabled=disabled
-  prompt=prompt
-  promptIsSelectable=promptIsSelectable
-  optionValuePath=optionValuePath
-  optionLabelPath=optionLabelPath
-}}
+{{#if mutUpdate}}
+  {{one-way-select
+    options=options
+    value=value
+    multiple=multiple
+    id=inputId
+    update=(action 'update')
+    disabled=disabled
+    prompt=prompt
+    promptIsSelectable=promptIsSelectable
+    optionValuePath=optionValuePath
+    optionLabelPath=optionLabelPath
+  }}
+{{else}}
+  {{one-way-select
+    options=options
+    value=value
+    multiple=multiple
+    id=inputId
+    update=update
+    disabled=disabled
+    prompt=prompt
+    promptIsSelectable=promptIsSelectable
+    optionValuePath=optionValuePath
+    optionLabelPath=optionLabelPath
+  }}
+{{/if}}
 {{error-messages/inline errors=errors}}
