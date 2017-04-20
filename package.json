@@ -1,7 +1,7 @@
 {
   "name": "mediasuite-formelements",
-  "version": "0.2.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "1.0.0",
+  "description": "Mediasuite form elements, wrapping one-way controls",
   "directories": {
     "doc": "doc",
     "test": "tests"
